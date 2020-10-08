@@ -23,9 +23,9 @@ GCGATAGCA
     C
 ```
 
-The choices can span multiple positions with multiletter choices (`GCG|ATC,AGA|TC,GT|AGCA`) or contain insertions or deletions (indels): `GTAGTG|AT,-T|TAA`.
+The choices can span multiple positions with multiletter choices (`GCG|ATC,AGA|TC,GT|AGCA`) or contain deletions (indels), marked with `-`: `GTAGTG|AT,-T|TAA`.
 
-Finally, the letters can be written with multiple characters:
+Finally, the letters can be written with multiple characters, using a separator character between the letters (`.`):
 `A,6mA|T.G.C.T|5mC,C|G.C.5mC`.
 This is useful if we want to represent similarities between some letters in a readable way. In the example above, `A` = adenine,  `6mA` = N6-methyladenine. Another example is writing diphthongs, for example `ae`.
 

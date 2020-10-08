@@ -9,7 +9,7 @@ setup(
     version=version["__version__"],
     author="Peter Vegh",
     description="Representing ambiguous sequences written with complement alphabets.",
-    long_description=open("pypi-readme.rest").read(),
+    long_description=open("pypi-readme.rst").read(),
     license="MIT",
     url="https://github.com/Edinburgh-Genome-Foundry/Polymera",
     keywords="sequence",
