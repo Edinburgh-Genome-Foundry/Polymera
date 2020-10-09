@@ -26,6 +26,10 @@ def test_polymer():
     polymer = polymera.Polymer(sequence, alphabet=polymera.bio.DNAAlphabet)
     assert polymer.get_sequence_complement().segments[0].choices == ["TACTT", "TACGG"]
     assert polymer.get_sequence_reverse().segments[2].choices == ["CCGTA", "AAGTA"]
+    assert polymer.get_sequence_reverse_complement().segments[2].choices == [
+        "GGCAT",
+        "TTCAT",
+    ]
 
     with pytest.raises(ValueError):
         sequence.add_sequence_from_string("ATGAA,ATGC")  # choices must have same length
