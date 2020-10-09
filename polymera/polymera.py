@@ -104,6 +104,15 @@ class Polymer:
 
         return reverse_complement
 
+    def to_string(self):
+        joined_choices = [
+            self.sequence.separators["choice"].join(segment.choices)
+            for segment in self.sequence.segments
+        ]
+        string = self.sequence.separators["segment"].join(joined_choices)
+
+        return string
+
 
 class Alphabet:
     """The Alphabet class describes the relations between the letters.

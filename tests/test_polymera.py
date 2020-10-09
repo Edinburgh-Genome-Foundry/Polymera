@@ -11,6 +11,8 @@ def test_sequence():
     sequence = polymera.Sequence(segments=[polymera.Segment(["A", "T"])])
     sequence.add_sequence_from_string("ATGAA,ATGCC|TATATTAGAAAAAA")
 
+    assert sequence.calculate_number_of_combinations() == 4
+
 
 def test_alphabet():
     polymera.Alphabet()
@@ -33,3 +35,5 @@ def test_polymer():
 
     with pytest.raises(ValueError):
         sequence.add_sequence_from_string("ATGAA,ATGC")  # choices must have same length
+
+    assert polymer.to_string() == "ATGAA,ATGCC|TATATTAGAAAAAA|ATGAA,ATGCC"
