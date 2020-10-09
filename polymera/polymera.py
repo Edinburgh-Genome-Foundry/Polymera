@@ -33,18 +33,7 @@ class Alphabet:
     """
 
     def __init__(
-        self,
-        letters={"A", "T", "C", "G", "4", "5", "6"},
-        complements={
-            "A": ["T"],
-            "T": ["A", "6"],
-            "C": ["G"],
-            "G": ["C", "4", "5"],
-            "4": ["G"],
-            "5": ["G"],
-            "6": ["T"],
-        },
-        relations=None,
+        self, letters={}, complements={}, relations=None,
     ):
         if any([len(letter) > 1 for letter in letters]):
             raise ValueError("Multicharacter letters are not implemented yet.")
