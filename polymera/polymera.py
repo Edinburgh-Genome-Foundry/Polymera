@@ -15,6 +15,38 @@ class Polymer:
         self.sequence = sequence
         self.alphabet = alphabet
 
+    def get_choice_complement(self, seq):
+        """Return the complement of a sequence string (choice).
+
+
+        **Parameters**
+
+        **seq**
+        > String to complement (`str`).
+        """
+        # The complements of a letter are always a list and the first one is used:
+        complement = "".join([self.alphabet.complements[letter][0] for letter in seq])
+
+        return complement
+
+    def get_segment_complement(self, segment):
+        """Return the complement of a Segment.
+
+        **Parameters**
+
+        **segment**
+        > `Segment` to complement.
+        """
+
+        complement_choices = []
+        for choice in segment.choices:
+            complement_choice = self.get_choice_complement(choice)
+            complement_choices.append(complement_choice)
+
+        complement_segment = Segment(complement_choices)
+
+        return complement_segment
+
 
 class Alphabet:
     """The Alphabet class describes the relations between the letters.
@@ -25,10 +57,10 @@ class Alphabet:
     **letters**
     > The `set` of letters (symbols) used for the sequence.
 
-    **Complements**
+    **complements**
     > The `dict` of complement relations. Format: `{"A": ["T"], "T": ["A", "6"]...`.
 
-    **Relations**
+    **relations**
     > Not implemented yet. Non-complement relations between letters.
     """
 
@@ -67,13 +99,21 @@ class Sequence:
 
         self.segments = self.get_segments()
 
+    def create_choices_from_string(self, string):
+        choices = string.split(self.separators["choice"])
+        if not all([len(choice) == len(choices[0]) for choice in choices]):
+            raise ValueError("Choices of a segment must be the same length.")
+        return choices
+
     def get_segments(self):
         """Create a list of `Segment` instances from the sequence attribute."""
         separator = self.separators["segment"]
         segment_strings = self.sequence.split(separator)
 
-        choice_separator = self.separators["choice"]
-        segments = [Segment(string, choice_separator) for string in segment_strings]
+        segments = [
+            Segment(self.create_choices_from_string(string))
+            for string in segment_strings
+        ]
 
         return segments
 
@@ -84,13 +124,9 @@ class Segment:
 
     **Parameters**
 
-    **string**
-    > The subsequence (`str`).
+    **choices**
+    > The `list` of segment choice `str`s.
+    """
 
-    **choice_separator**
-    > Character marking the boundaries of subsequence alternatives (`str`)."""
-
-    def __init__(self, string, choice_separator=","):
-        self.choices = string.split(choice_separator)
-        if not all([len(choice) == len(self.choices[0]) for choice in self.choices]):
-            raise ValueError("Choices of a segment must be the same length.")
+    def __init__(self, choices):
+        self.choices = choices
