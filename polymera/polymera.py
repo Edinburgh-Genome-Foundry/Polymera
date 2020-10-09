@@ -188,6 +188,16 @@ class Sequence:
         else:
             self.segments += self.create_segments_from_string(string)
 
+    def calculate_number_of_combinations(self):
+        multiplier_list = []
+        for segment in self.segments:
+            multiplier_list.append(len(segment.choices))
+        x = 1
+        for multiplier in multiplier_list:
+            x *= multiplier
+
+        return x
+
 
 class Segment:
     """Segments store the possible subsequences (choices) for a given region.
