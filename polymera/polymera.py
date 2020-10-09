@@ -1,10 +1,23 @@
 class Polymer:
+    """Class for representing a sequence with its alphabet.
+
+
+    **Parameters**
+
+    **sequence**
+    > `Sequence` class instance.
+
+    **alphabet**
+    > `Alphabet` class instance.
+    """
+
     def __init__(self, sequence, alphabet):
         self.sequence = sequence
         self.alphabet = alphabet
         self.segments = self.get_segments()
 
     def get_segments(self):
+        """Create a list of `Segment` instances from the sequence attribute."""
         separator = self.sequence.separators["segment"]
         segment_strings = self.sequence.sequence.split(separator)
 
@@ -15,7 +28,20 @@ class Polymer:
 
 
 class Alphabet:
-    """The Alphabet class describes the relations between the letters."""
+    """The Alphabet class describes the relations between the letters.
+
+
+    **Parameters**
+
+    **letters**
+    > The `set` of letters (symbols) used for the sequence.
+
+    **Complements**
+    > The `dict` of complement relations. Format: `{"A": ["T"], "T": ["A", "6"]...`.
+
+    **Relations**
+    > Not implemented yet. Non-complement relations between letters.
+    """
 
     def __init__(
         self,
@@ -39,7 +65,7 @@ class Alphabet:
 
 
 class Sequence:
-    """The Sequence stores the sequence (string).
+    """The Sequence class stores the sequence (string).
 
 
     **Parameters**
@@ -48,8 +74,9 @@ class Sequence:
     > The sequence string (`str`).
 
     **separators**
-    > The separator characters in a `dict`. Example:
-    `{"segment": "|", "choice": ",", "letter": ".", "del": "-"}`.
+    > The separator characters in a `dict`. Format:
+    `{"segment": "|", "choice": ",", "letter": ".", "del": "-"}`. Letter separators are
+    not implemented yet.
     """
 
     def __init__(
@@ -62,6 +89,17 @@ class Sequence:
 
 
 class Segment:
+    """Segments store the possible subsequences (choices) for a given region.
+
+
+    **Parameters**
+
+    **string**
+    > The subsequence (`str`).
+
+    **choice_separator**
+    > Character marking the boundaries of subsequence alternatives (`str`)."""
+
     def __init__(self, string, choice_separator=","):
         self.choices = string.split(choice_separator)
         if not all([len(choice) == len(self.choices[0]) for choice in self.choices]):
