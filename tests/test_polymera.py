@@ -3,12 +3,13 @@ import polymera
 
 
 def test_segment():
-    with pytest.raises(ValueError):
-        polymera.Segment("A,AA")
+    polymera.Segment(["A", "T"])
 
 
 def test_sequence():
-    polymera.Sequence()
+    sequence = polymera.Sequence()  # test without segment
+    sequence = polymera.Sequence(segments=[polymera.Segment(["A", "T"])])
+    sequence.add_sequence_from_string("ATGAA,ATGCC|TATATTAGAAAAAA")
 
 
 def test_alphabet():
@@ -18,6 +19,12 @@ def test_alphabet():
 
 
 def test_polymer():
-    polymera.Polymer(
-        polymera.Sequence("ATGAA,ATGCC|TATATTAGAAAAAA"), polymera.Alphabet()
-    )
+    sequence = polymera.Sequence()
+    sequence.add_sequence_from_string("ATGAA,ATGCC|TATATTAGAAAAAA")
+    sequence.add_sequence_from_string("ATGAA,ATGCC")
+
+    polymer = polymera.Polymer(sequence, alphabet=polymera.bio.DNAAlphabet)
+    polymer.get_sequence_complement()
+
+    with pytest.raises(ValueError):
+        sequence.add_sequence_from_string("ATGAA,ATGC")  # choices must have same length
