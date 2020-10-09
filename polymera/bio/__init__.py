@@ -1,1 +1,2 @@
-from .dna import DNAAlphabet, DNASequence
+from .dna import DNAAlphabet
+from .protein import ProteinAlphabet
