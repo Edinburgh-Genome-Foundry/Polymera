@@ -36,4 +36,4 @@ def test_polymer():
     with pytest.raises(ValueError):
         sequence.add_sequence_from_string("ATGAA,ATGC")  # choices must have same length
 
-    assert polymer.to_string() == "ATGAA,ATGCC|TATATTAGAAAAAA|ATGAA,ATGCC"
+    assert polymer.sequence.to_string() == "ATGAA,ATGCC|TATATTAGAAAAAA|ATGAA,ATGCC"
