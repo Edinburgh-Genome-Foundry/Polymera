@@ -7,7 +7,7 @@
 
 **Work in progress!**
 
-Polymera is a Python package for representing *ambiguous sequences.* An ambiguous sequence has a number of multiple possible letters (symbols, elements) at each position. Additionally, Polymera can model sequences written with *complement alphabets.* Each letter of a complement alphabet can form a pair with specific letters, their *complements.*
+Polymera is a Python package for representing *ambiguous sequences.* An ambiguous sequence has a number of possible letters (symbols, elements) at each position. Additionally, Polymera can model sequences written with *complement alphabets.* Each letter of a complement alphabet can form a pair with specific letters, their *complements.*
 
 These sequences can describe linear polymers, for example DNA, that can pair with a complement polymer.
 
