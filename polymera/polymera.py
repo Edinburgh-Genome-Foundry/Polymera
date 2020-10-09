@@ -189,6 +189,7 @@ class Sequence:
             self.segments += self.create_segments_from_string(string)
 
     def calculate_number_of_combinations(self):
+        """Calculate the number of exact sequences represented."""
         multiplier_list = []
         for segment in self.segments:
             multiplier_list.append(len(segment.choices))
@@ -199,6 +200,7 @@ class Sequence:
         return x
 
     def to_string(self):
+        """Return a string representation of the ambiguous sequence."""
         joined_choices = [
             self.separators["choice"].join(segment.choices) for segment in self.segments
         ]
