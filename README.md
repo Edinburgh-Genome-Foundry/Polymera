@@ -1,10 +1,17 @@
+<p align="center">
+<img alt="Polymera logo" title="Polymera" src="https://raw.githubusercontent.com/Edinburgh-Genome-Foundry/Polymera/main/images/Polymera.png" width="140">
+</p>
+
+
 # Polymera
 
-**Work in progress**
+**Work in progress!**
 
 Polymera is a Python package for representing *ambiguous sequences.* An ambiguous sequence has a number of multiple possible letters (symbols, elements) at each position. Additionally, Polymera can model sequences written with *complement alphabets.* Each letter of a complement alphabet can form a pair with specific letters, their *complements.*
 
 These sequences can describe linear polymers, for example DNA, that can pair with a complement polymer.
+
+*Polymera* is a genus of crane fly.
 
 
 ## Details
@@ -32,6 +39,7 @@ This is useful if we want to represent similarities between some letters in a re
 ### Information content
 
 Note that in a sequence, an ambiguous position can mean one of two things:
+
 1. Options: all letters noted in the position are suitable.
 2. Uncertainty: it's not exactly known what letter occupies the position.
 
@@ -47,17 +55,23 @@ pip install polymera
 
 ## Usage
 
+Define a sequence:
+
 ```python
-# Define a sequence:
 sequence = polymera.Sequence()
 sequence.add_sequence_from_string("ATGAA,ATGCC|TATATTAGAAAAAA")
 sequence.calculate_number_of_combinations()
-# 2
-# Instantiate polymer:
+```
+Returns `2`.
+
+Instantiate polymer:
+
+```python
 polymer = polymera.Polymer(sequence, alphabet=polymera.bio.DNAAlphabet)
 polymer.get_sequence_reverse_complement().to_string()
-# 'TTTTTTCTAATATA|GGCAT,TTCAT'
-````
+```
+Returns `TTTTTTCTAATATA|GGCAT,TTCAT`.
+
 
 ## Versioning
 
