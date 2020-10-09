@@ -56,6 +56,46 @@ class Polymer:
             complement_segments.append(complement_segment)
         return Sequence(complement_segments, self.sequence.separators)
 
+    def get_choice_reverse(self, seq):
+        """Get reverse of a sequence string (choice).
+
+
+        **Parameters**
+
+        **seq**
+        > String to reverse (`str`).
+        """
+        reverse = seq[::-1]
+
+        return reverse
+
+    def get_segment_reverse(self, segment):
+        """Return the reverse of a Segment.
+
+        **Parameters**
+
+        **segment**
+        > `Segment` to reverse.
+        """
+
+        reverse_choices = []
+        for choice in segment.choices:
+            reverse_choice = self.get_choice_reverse(choice)
+            reverse_choices.append(reverse_choice)
+
+        reverse_segment = Segment(reverse_choices)
+
+        return reverse_segment
+
+    def get_sequence_reverse(self):
+        """Return the reverse of the polymer sequence."""
+        reverse_segments = []
+        for segment in self.sequence.segments:
+            reverse_segment = self.get_segment_reverse(segment)
+
+            reverse_segments.append(reverse_segment)
+        return Sequence(reverse_segments, self.sequence.separators)
+
 
 class Alphabet:
     """The Alphabet class describes the relations between the letters.
