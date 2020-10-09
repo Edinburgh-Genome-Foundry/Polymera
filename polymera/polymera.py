@@ -47,6 +47,15 @@ class Polymer:
 
         return complement_segment
 
+    def get_sequence_complement(self):
+        """Return the complement of the polymer sequence."""
+        complement_segments = []
+        for segment in self.sequence.segments:
+            complement_segment = self.get_segment_complement(segment)
+
+            complement_segments.append(complement_segment)
+        return Sequence(complement_segments, self.sequence.separators)
+
 
 class Alphabet:
     """The Alphabet class describes the relations between the letters.
@@ -80,35 +89,36 @@ class Sequence:
 
     **Parameters**
 
-    **sequence**
-    > The sequence string (`str`).
+    **segments**
+    > A `list` of `Segment`s.
 
     **separators**
     > The separator characters in a `dict`. Format:
-    `{"segment": "|", "choice": ",", "letter": ".", "del": "-"}`. Letter separators are
-    not implemented yet.
+    `{"segment": "|", "choice": ",", "letter": ".", "del": "-"}`. Letter
+    separators are not implemented yet.
     """
 
     def __init__(
         self,
-        sequence="",
+        segments=None,
         separators={"segment": "|", "choice": ",", "letter": ".", "del": "-"},
     ):
-        self.sequence = sequence
+        if segments is None:
+            self.segments = []
+        else:
+            self.segments = segments
         self.separators = separators
-
-        self.segments = self.get_segments()
 
     def create_choices_from_string(self, string):
         choices = string.split(self.separators["choice"])
         if not all([len(choice) == len(choices[0]) for choice in choices]):
-            raise ValueError("Choices of a segment must be the same length.")
+            raise ValueError("Choices of a segment must have the same length.")
         return choices
 
-    def get_segments(self):
+    def create_segments_from_string(self, string):
         """Create a list of `Segment` instances from the sequence attribute."""
         separator = self.separators["segment"]
-        segment_strings = self.sequence.split(separator)
+        segment_strings = string.split(separator)
 
         segments = [
             Segment(self.create_choices_from_string(string))
@@ -116,6 +126,19 @@ class Sequence:
         ]
 
         return segments
+
+    def add_sequence_from_string(self, string):
+        """Convert a string into segments and append to the sequence.
+
+        **Parameters**
+
+        **string**
+        > `str`.
+        """
+        if self.segments is []:
+            self.segments = self.create_segments_from_string(string)
+        else:
+            self.segments += self.create_segments_from_string(string)
 
 
 class Segment:
