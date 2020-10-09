@@ -1,3 +1,3 @@
-from .polymera import Polymera, Alphabet, Sequence
+from .polymera import Polymer, Alphabet, Sequence
 
 from .version import __version__

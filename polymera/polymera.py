@@ -1,4 +1,4 @@
-class Polymera:
+class Polymer:
     def __init__(self, sequence, alphabet):
         self.sequence = sequence
         self.alphabet = alphabet
