@@ -1,0 +1,1937 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
+    
+    
+      
+        <title>Polymera - Polymera</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.b5d04df8.min.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.9ab2c1f8.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#4caf50">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="lightgreen">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-polymerapolymera" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="Polymera" class="md-header-nav__button md-logo" aria-label="Polymera">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis md-ellipsis">
+          Polymera
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/Edinburgh-Genome-Foundry/Polymera/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Polymera
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Polymera" class="md-nav__button md-logo" aria-label="Polymera">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Polymera
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/Edinburgh-Genome-Foundry/Polymera/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Polymera
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Reference
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Reference" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Reference
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" checked>
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Polymera
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Polymera" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Polymera
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Polymera
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Polymera" class="md-nav__link md-nav__link--active">
+      Polymera
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alphabet" class="md-nav__link">
+    Alphabet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polymer" class="md-nav__link">
+    Polymer
+  </a>
+  
+    <nav class="md-nav" aria-label="Polymer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_choice_complement" class="md-nav__link">
+    get_choice_complement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_choice_reverse" class="md-nav__link">
+    get_choice_reverse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_segment_complement" class="md-nav__link">
+    get_segment_complement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_segment_reverse" class="md-nav__link">
+    get_segment_reverse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_sequence_complement" class="md-nav__link">
+    get_sequence_complement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_sequence_reverse" class="md-nav__link">
+    get_sequence_reverse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_sequence_reverse_complement" class="md-nav__link">
+    get_sequence_reverse_complement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#segment" class="md-nav__link">
+    Segment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequence" class="md-nav__link">
+    Sequence
+  </a>
+  
+    <nav class="md-nav" aria-label="Sequence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods_1" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add_sequence_from_string" class="md-nav__link">
+    add_sequence_from_string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculate_number_of_combinations" class="md-nav__link">
+    calculate_number_of_combinations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_choices_from_string" class="md-nav__link">
+    create_choices_from_string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_segments_from_string" class="md-nav__link">
+    create_segments_from_string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_string" class="md-nav__link">
+    to_string
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../version/" title="Version" class="md-nav__link">
+      Version
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-1-4" type="checkbox" id="nav-2-1-4">
+    
+    <label class="md-nav__link" for="nav-2-1-4">
+      Bio
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Bio" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-1-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Bio
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bio/dna/" title="Dna" class="md-nav__link">
+      Dna
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bio/" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bio/protein/" title="Protein" class="md-nav__link">
+      Protein
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#classes" class="md-nav__link">
+    Classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alphabet" class="md-nav__link">
+    Alphabet
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polymer" class="md-nav__link">
+    Polymer
+  </a>
+  
+    <nav class="md-nav" aria-label="Polymer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#get_choice_complement" class="md-nav__link">
+    get_choice_complement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_choice_reverse" class="md-nav__link">
+    get_choice_reverse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_segment_complement" class="md-nav__link">
+    get_segment_complement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_segment_reverse" class="md-nav__link">
+    get_segment_reverse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_sequence_complement" class="md-nav__link">
+    get_sequence_complement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_sequence_reverse" class="md-nav__link">
+    get_sequence_reverse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_sequence_reverse_complement" class="md-nav__link">
+    get_sequence_reverse_complement
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#segment" class="md-nav__link">
+    Segment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sequence" class="md-nav__link">
+    Sequence
+  </a>
+  
+    <nav class="md-nav" aria-label="Sequence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methods_1" class="md-nav__link">
+    Methods
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add_sequence_from_string" class="md-nav__link">
+    add_sequence_from_string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculate_number_of_combinations" class="md-nav__link">
+    calculate_number_of_combinations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_choices_from_string" class="md-nav__link">
+    create_choices_from_string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create_segments_from_string" class="md-nav__link">
+    create_segments_from_string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#to_string" class="md-nav__link">
+    to_string
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Edinburgh-Genome-Foundry/Polymera/edit/master/reference/polymera/polymera.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                <h1 id="module-polymerapolymera">Module polymera.polymera</h1>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code><span class="s s-Atom">class</span> <span class="nv">Polymer</span><span class="s s-Atom">:</span>
+
+    <span class="s2">&quot;&quot;&quot;Class for representing a sequence with its alphabet.</span>
+
+<span class="s2">    **Parameters**</span>
+
+<span class="s2">    **sequence**</span>
+
+<span class="s2">    &gt; `Sequence` class instance.</span>
+
+<span class="s2">    **alphabet**</span>
+
+<span class="s2">    &gt; `Alphabet` class instance.</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="s s-Atom">def</span> <span class="k">__</span><span class="nf">init__</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">,</span> <span class="s s-Atom">sequence</span><span class="p">,</span> <span class="s s-Atom">alphabet</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">sequence</span> <span class="o">=</span> <span class="s s-Atom">sequence</span>
+
+        <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">alphabet</span> <span class="o">=</span> <span class="s s-Atom">alphabet</span>
+
+    <span class="s s-Atom">def</span> <span class="nf">get_choice_complement</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">,</span> <span class="s s-Atom">seq</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s2">&quot;&quot;&quot;Return the complement of a sequence string (choice).</span>
+
+<span class="s2">        **Parameters**</span>
+
+<span class="s2">        **seq**</span>
+
+<span class="s2">        &gt; String to complement (`str`).</span>
+
+<span class="s2">        &quot;&quot;&quot;</span>
+
+        <span class="s s-Atom">#</span> <span class="nv">The</span> <span class="s s-Atom">complements</span> <span class="s s-Atom">of</span> <span class="s s-Atom">a</span> <span class="s s-Atom">letter</span> <span class="s s-Atom">are</span> <span class="s s-Atom">always</span> <span class="s s-Atom">a</span> <span class="s s-Atom">list</span> <span class="s s-Atom">and</span> <span class="s s-Atom">the</span> <span class="s s-Atom">first</span> <span class="s s-Atom">one</span> <span class="o">is</span> <span class="nn">used</span><span class="p">:</span>
+
+        <span class="s s-Atom">complement</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">.</span><span class="nf">join</span><span class="p">([</span><span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">alphabet</span><span class="p">.</span><span class="s s-Atom">complements</span><span class="p">[</span><span class="s s-Atom">letter</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="s s-Atom">for</span> <span class="s s-Atom">letter</span> <span class="s s-Atom">in</span> <span class="s s-Atom">seq</span><span class="p">])</span>
+
+        <span class="s s-Atom">return</span> <span class="s s-Atom">complement</span>
+
+    <span class="s s-Atom">def</span> <span class="nf">get_segment_complement</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">,</span> <span class="s s-Atom">segment</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s2">&quot;&quot;&quot;Return the complement of a Segment.</span>
+
+<span class="s2">        **Parameters**</span>
+
+<span class="s2">        **segment**</span>
+
+<span class="s2">        &gt; `Segment` to complement.</span>
+
+<span class="s2">        &quot;&quot;&quot;</span>
+
+        <span class="s s-Atom">complement_choices</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="s s-Atom">for</span> <span class="s s-Atom">choice</span> <span class="s s-Atom">in</span> <span class="s s-Atom">segment</span><span class="p">.</span><span class="nn">choices</span><span class="p">:</span>
+
+            <span class="s s-Atom">complement_choice</span> <span class="o">=</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="nf">get_choice_complement</span><span class="p">(</span><span class="s s-Atom">choice</span><span class="p">)</span>
+
+            <span class="s s-Atom">complement_choices</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="s s-Atom">complement_choice</span><span class="p">)</span>
+
+        <span class="s s-Atom">complement_segment</span> <span class="o">=</span> <span class="nv">Segment</span><span class="p">(</span><span class="s s-Atom">complement_choices</span><span class="p">)</span>
+
+        <span class="s s-Atom">return</span> <span class="s s-Atom">complement_segment</span>
+
+    <span class="s s-Atom">def</span> <span class="nf">get_sequence_complement</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s2">&quot;&quot;&quot;Return the complement of the polymer sequence.&quot;&quot;&quot;</span>
+
+        <span class="s s-Atom">complement_segments</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="s s-Atom">for</span> <span class="s s-Atom">segment</span> <span class="s s-Atom">in</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">sequence</span><span class="p">.</span><span class="nn">segments</span><span class="p">:</span>
+
+            <span class="s s-Atom">complement_segment</span> <span class="o">=</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="nf">get_segment_complement</span><span class="p">(</span><span class="s s-Atom">segment</span><span class="p">)</span>
+
+            <span class="s s-Atom">complement_segments</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="s s-Atom">complement_segment</span><span class="p">)</span>
+
+        <span class="s s-Atom">return</span> <span class="nv">Sequence</span><span class="p">(</span><span class="s s-Atom">complement_segments</span><span class="p">,</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">sequence</span><span class="p">.</span><span class="s s-Atom">separators</span><span class="p">)</span>
+
+    <span class="s s-Atom">def</span> <span class="nf">get_choice_reverse</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">,</span> <span class="s s-Atom">seq</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s2">&quot;&quot;&quot;Get reverse of a sequence string (choice).</span>
+
+<span class="s2">        **Parameters**</span>
+
+<span class="s2">        **seq**</span>
+
+<span class="s2">        &gt; String to reverse (`str`).</span>
+
+<span class="s2">        &quot;&quot;&quot;</span>
+
+        <span class="s s-Atom">reverse</span> <span class="o">=</span> <span class="s s-Atom">seq</span><span class="p">[</span><span class="s s-Atom">::-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="s s-Atom">return</span> <span class="s s-Atom">reverse</span>
+
+    <span class="s s-Atom">def</span> <span class="nf">get_segment_reverse</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">,</span> <span class="s s-Atom">segment</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s2">&quot;&quot;&quot;Return the reverse of a Segment.</span>
+
+<span class="s2">        **Parameters**</span>
+
+<span class="s2">        **segment**</span>
+
+<span class="s2">        &gt; `Segment` to reverse.</span>
+
+<span class="s2">        &quot;&quot;&quot;</span>
+
+        <span class="s s-Atom">reverse_choices</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="s s-Atom">for</span> <span class="s s-Atom">choice</span> <span class="s s-Atom">in</span> <span class="nf">reversed</span><span class="p">(</span><span class="s s-Atom">segment</span><span class="p">.</span><span class="s s-Atom">choices</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+            <span class="s s-Atom">reverse_choice</span> <span class="o">=</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="nf">get_choice_reverse</span><span class="p">(</span><span class="s s-Atom">choice</span><span class="p">)</span>
+
+            <span class="s s-Atom">reverse_choices</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="s s-Atom">reverse_choice</span><span class="p">)</span>
+
+        <span class="s s-Atom">reverse_segment</span> <span class="o">=</span> <span class="nv">Segment</span><span class="p">(</span><span class="s s-Atom">reverse_choices</span><span class="p">)</span>
+
+        <span class="s s-Atom">return</span> <span class="s s-Atom">reverse_segment</span>
+
+    <span class="s s-Atom">def</span> <span class="nf">get_sequence_reverse</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s2">&quot;&quot;&quot;Return the reverse of the polymer sequence.&quot;&quot;&quot;</span>
+
+        <span class="s s-Atom">reverse_segments</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="s s-Atom">for</span> <span class="s s-Atom">segment</span> <span class="s s-Atom">in</span> <span class="nf">reversed</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">sequence</span><span class="p">.</span><span class="s s-Atom">segments</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+            <span class="s s-Atom">reverse_segment</span> <span class="o">=</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="nf">get_segment_reverse</span><span class="p">(</span><span class="s s-Atom">segment</span><span class="p">)</span>
+
+            <span class="s s-Atom">reverse_segments</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="s s-Atom">reverse_segment</span><span class="p">)</span>
+
+        <span class="s s-Atom">return</span> <span class="nv">Sequence</span><span class="p">(</span><span class="s s-Atom">reverse_segments</span><span class="p">,</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">sequence</span><span class="p">.</span><span class="s s-Atom">separators</span><span class="p">)</span>
+
+    <span class="s s-Atom">def</span> <span class="nf">get_sequence_reverse_complement</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s2">&quot;&quot;&quot;Return the reverse complement of the polymer sequence.&quot;&quot;&quot;</span>
+
+        <span class="s s-Atom">reverse</span> <span class="o">=</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="nf">get_sequence_reverse</span><span class="p">()</span>
+
+        <span class="s s-Atom">reversed_polymer</span> <span class="o">=</span> <span class="nv">Polymer</span><span class="p">(</span><span class="s s-Atom">sequence</span><span class="o">=</span><span class="s s-Atom">reverse</span><span class="p">,</span> <span class="s s-Atom">alphabet</span><span class="o">=</span><span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">alphabet</span><span class="p">)</span>
+
+        <span class="s s-Atom">reverse_complement</span> <span class="o">=</span> <span class="s s-Atom">reversed_polymer</span><span class="p">.</span><span class="nf">get_sequence_complement</span><span class="p">()</span>
+
+        <span class="s s-Atom">return</span> <span class="s s-Atom">reverse_complement</span>
+
+<span class="s s-Atom">class</span> <span class="nv">Alphabet</span><span class="s s-Atom">:</span>
+
+    <span class="s2">&quot;&quot;&quot;The Alphabet class describes the relations between the letters.</span>
+
+<span class="s2">    **Parameters**</span>
+
+<span class="s2">    **letters**</span>
+
+<span class="s2">    &gt; The `set` of letters (symbols) used for the sequence.</span>
+
+<span class="s2">    **complements**</span>
+
+<span class="s2">    &gt; The `dict` of complement relations. Format: `{&quot;</span><span class="nv">A</span><span class="s2">&quot;: [&quot;</span><span class="nv">T</span><span class="s2">&quot;], &quot;</span><span class="nv">T</span><span class="s2">&quot;: [&quot;</span><span class="nv">A</span><span class="s2">&quot;, &quot;</span><span class="mi">6</span><span class="s2">&quot;]...`.</span>
+
+<span class="s2">    **relations**</span>
+
+<span class="s2">    &gt; Not implemented yet. Non-complement relations between letters.</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="s s-Atom">def</span> <span class="k">__</span><span class="nf">init__</span><span class="p">(</span>
+
+        <span class="s s-Atom">self</span><span class="p">,</span> <span class="s s-Atom">letters=</span><span class="p">{},</span> <span class="s s-Atom">complements=</span><span class="p">{},</span> <span class="s s-Atom">relations</span><span class="o">=</span><span class="nv">None</span><span class="p">,</span>
+
+    <span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s s-Atom">if</span> <span class="nf">any</span><span class="p">([</span><span class="nf">len</span><span class="p">(</span><span class="s s-Atom">letter</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="s s-Atom">for</span> <span class="s s-Atom">letter</span> <span class="s s-Atom">in</span> <span class="s s-Atom">letters</span><span class="p">])</span><span class="s s-Atom">:</span>
+
+            <span class="s s-Atom">raise</span> <span class="nv">ValueError</span><span class="p">(</span><span class="s2">&quot;Multicharacter letters are not implemented yet.&quot;</span><span class="p">)</span>
+
+        <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">letters</span> <span class="o">=</span> <span class="s s-Atom">letters</span>
+
+        <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">complements</span> <span class="o">=</span> <span class="s s-Atom">complements</span>
+
+        <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">relations</span> <span class="o">=</span> <span class="s s-Atom">relations</span>
+
+<span class="s s-Atom">class</span> <span class="nv">Sequence</span><span class="s s-Atom">:</span>
+
+    <span class="s2">&quot;&quot;&quot;The Sequence class stores the sequence (string).</span>
+
+<span class="s2">    **Parameters**</span>
+
+<span class="s2">    **segments**</span>
+
+<span class="s2">    &gt; A `list` of `Segment`s.</span>
+
+<span class="s2">    **separators**</span>
+
+<span class="s2">    &gt; The separator characters in a `dict`. Format:</span>
+
+<span class="s2">    `{&quot;</span><span class="s s-Atom">segment</span><span class="s2">&quot;: &quot;</span><span class="p">|</span><span class="s2">&quot;, &quot;</span><span class="s s-Atom">choice</span><span class="s2">&quot;: &quot;</span><span class="p">,</span><span class="s2">&quot;, &quot;</span><span class="s s-Atom">letter</span><span class="s2">&quot;: &quot;</span><span class="p">.</span><span class="s2">&quot;, &quot;</span><span class="s s-Atom">del</span><span class="s2">&quot;: &quot;</span><span class="s s-Atom">-</span><span class="s2">&quot;}`. Letter</span>
+
+<span class="s2">    separators are not implemented yet.</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="s s-Atom">def</span> <span class="k">__</span><span class="nf">init__</span><span class="p">(</span>
+
+        <span class="s s-Atom">self</span><span class="p">,</span>
+
+        <span class="s s-Atom">segments</span><span class="o">=</span><span class="nv">None</span><span class="p">,</span>
+
+        <span class="s s-Atom">separators=</span><span class="p">{</span><span class="s2">&quot;segment&quot;</span><span class="s s-Atom">:</span> <span class="s2">&quot;|&quot;</span><span class="p">,</span> <span class="s2">&quot;choice&quot;</span><span class="s s-Atom">:</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;letter&quot;</span><span class="s s-Atom">:</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;del&quot;</span><span class="s s-Atom">:</span> <span class="s2">&quot;-&quot;</span><span class="p">},</span>
+
+    <span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s s-Atom">if</span> <span class="s s-Atom">segments</span> <span class="o">is</span> <span class="nv">None</span><span class="s s-Atom">:</span>
+
+            <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">segments</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="nn">else</span><span class="p">:</span>
+
+            <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">segments</span> <span class="o">=</span> <span class="s s-Atom">segments</span>
+
+        <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">separators</span> <span class="o">=</span> <span class="s s-Atom">separators</span>
+
+    <span class="s s-Atom">def</span> <span class="nf">create_choices_from_string</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">,</span> <span class="s s-Atom">string</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s s-Atom">choices</span> <span class="o">=</span> <span class="s s-Atom">string</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">separators</span><span class="p">[</span><span class="s2">&quot;choice&quot;</span><span class="p">])</span>
+
+        <span class="s s-Atom">if</span> <span class="o">not</span> <span class="nf">all</span><span class="p">([</span><span class="nf">len</span><span class="p">(</span><span class="s s-Atom">choice</span><span class="p">)</span> <span class="o">==</span> <span class="nf">len</span><span class="p">(</span><span class="s s-Atom">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="s s-Atom">for</span> <span class="s s-Atom">choice</span> <span class="s s-Atom">in</span> <span class="s s-Atom">choices</span><span class="p">])</span><span class="s s-Atom">:</span>
+
+            <span class="s s-Atom">raise</span> <span class="nv">ValueError</span><span class="p">(</span><span class="s2">&quot;Choices of a segment must have the same length.&quot;</span><span class="p">)</span>
+
+        <span class="s s-Atom">return</span> <span class="s s-Atom">choices</span>
+
+    <span class="s s-Atom">def</span> <span class="nf">create_segments_from_string</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">,</span> <span class="s s-Atom">string</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s2">&quot;&quot;&quot;Create a list of `Segment` instances from the sequence attribute.&quot;&quot;&quot;</span>
+
+        <span class="s s-Atom">separator</span> <span class="o">=</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">separators</span><span class="p">[</span><span class="s2">&quot;segment&quot;</span><span class="p">]</span>
+
+        <span class="s s-Atom">segment_strings</span> <span class="o">=</span> <span class="s s-Atom">string</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s s-Atom">separator</span><span class="p">)</span>
+
+        <span class="s s-Atom">segments</span> <span class="o">=</span> <span class="p">[</span>
+
+            <span class="nv">Segment</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">.</span><span class="nf">create_choices_from_string</span><span class="p">(</span><span class="s s-Atom">string</span><span class="p">))</span>
+
+            <span class="s s-Atom">for</span> <span class="s s-Atom">string</span> <span class="s s-Atom">in</span> <span class="s s-Atom">segment_strings</span>
+
+        <span class="p">]</span>
+
+        <span class="s s-Atom">return</span> <span class="s s-Atom">segments</span>
+
+    <span class="s s-Atom">def</span> <span class="nf">add_sequence_from_string</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">,</span> <span class="s s-Atom">string</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s2">&quot;&quot;&quot;Convert a string into segments and append to the sequence.</span>
+
+<span class="s2">        **Parameters**</span>
+
+<span class="s2">        **string**</span>
+
+<span class="s2">        &gt; `str`.</span>
+
+<span class="s2">        &quot;&quot;&quot;</span>
+
+        <span class="s s-Atom">if</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">segments</span> <span class="o">is</span> <span class="p">[]</span><span class="s s-Atom">:</span>
+
+            <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">segments</span> <span class="o">=</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="nf">create_segments_from_string</span><span class="p">(</span><span class="s s-Atom">string</span><span class="p">)</span>
+
+        <span class="nn">else</span><span class="p">:</span>
+
+            <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">segments</span> <span class="s s-Atom">+=</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="nf">create_segments_from_string</span><span class="p">(</span><span class="s s-Atom">string</span><span class="p">)</span>
+
+    <span class="s s-Atom">def</span> <span class="nf">calculate_number_of_combinations</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s2">&quot;&quot;&quot;Calculate the number of exact sequences represented.&quot;&quot;&quot;</span>
+
+        <span class="s s-Atom">multiplier_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="s s-Atom">for</span> <span class="s s-Atom">segment</span> <span class="s s-Atom">in</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="nn">segments</span><span class="p">:</span>
+
+            <span class="s s-Atom">multiplier_list</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="s s-Atom">segment</span><span class="p">.</span><span class="s s-Atom">choices</span><span class="p">))</span>
+
+        <span class="s s-Atom">x</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="s s-Atom">for</span> <span class="s s-Atom">multiplier</span> <span class="s s-Atom">in</span> <span class="s s-Atom">multiplier_list:</span>
+
+            <span class="s s-Atom">x</span> <span class="s s-Atom">*=</span> <span class="s s-Atom">multiplier</span>
+
+        <span class="s s-Atom">return</span> <span class="s s-Atom">x</span>
+
+    <span class="s s-Atom">def</span> <span class="nf">to_string</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s2">&quot;&quot;&quot;Return a string representation of the ambiguous sequence.&quot;&quot;&quot;</span>
+
+        <span class="s s-Atom">joined_choices</span> <span class="o">=</span> <span class="p">[</span>
+
+            <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">separators</span><span class="p">[</span><span class="s2">&quot;choice&quot;</span><span class="p">].</span><span class="nf">join</span><span class="p">(</span><span class="s s-Atom">segment</span><span class="p">.</span><span class="s s-Atom">choices</span><span class="p">)</span> <span class="s s-Atom">for</span> <span class="s s-Atom">segment</span> <span class="s s-Atom">in</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">segments</span>
+
+        <span class="p">]</span>
+
+        <span class="s s-Atom">string</span> <span class="o">=</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">separators</span><span class="p">[</span><span class="s2">&quot;segment&quot;</span><span class="p">].</span><span class="nf">join</span><span class="p">(</span><span class="s s-Atom">joined_choices</span><span class="p">)</span>
+
+        <span class="s s-Atom">return</span> <span class="s s-Atom">string</span>
+
+<span class="s s-Atom">class</span> <span class="nv">Segment</span><span class="s s-Atom">:</span>
+
+    <span class="s2">&quot;&quot;&quot;Segments store the possible subsequences (choices) for a given region.</span>
+
+<span class="s2">    **Parameters**</span>
+
+<span class="s2">    **choices**</span>
+
+<span class="s2">    &gt; The `list` of segment choice `str`s.</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="s s-Atom">def</span> <span class="k">__</span><span class="nf">init__</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">,</span> <span class="s s-Atom">choices</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">choices</span> <span class="o">=</span> <span class="s s-Atom">choices</span>
+</code></pre></div>
+
+
+</details>
+<h2 id="classes">Classes</h2>
+<h3 id="alphabet">Alphabet</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Alphabet</span><span class="p">(</span>
+    <span class="n">letters</span><span class="o">=</span><span class="p">{},</span>
+    <span class="n">complements</span><span class="o">=</span><span class="p">{},</span>
+    <span class="n">relations</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>The Alphabet class describes the relations between the letters.</p>
+<p><strong>Parameters</strong></p>
+<p><strong>letters</strong></p>
+<blockquote>
+<p>The <code>set</code> of letters (symbols) used for the sequence.</p>
+</blockquote>
+<p><strong>complements</strong></p>
+<blockquote>
+<p>The <code>dict</code> of complement relations. Format: <code>{"A": ["T"], "T": ["A", "6"]...</code>.</p>
+</blockquote>
+<p><strong>relations</strong></p>
+<blockquote>
+<p>Not implemented yet. Non-complement relations between letters.</p>
+</blockquote>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code><span class="n">class</span> <span class="n">Alphabet</span><span class="p">:</span>
+
+    <span class="s2">&quot;&quot;&quot;The Alphabet class describes the relations between the letters.</span>
+
+<span class="s2">    **Parameters**</span>
+
+<span class="s2">    **letters**</span>
+
+<span class="s2">    &gt; The `set` of letters (symbols) used for the sequence.</span>
+
+<span class="s2">    **complements**</span>
+
+<span class="s2">    &gt; The `dict` of complement relations. Format: `{&quot;</span><span class="n">A</span><span class="s2">&quot;: [&quot;</span><span class="n">T</span><span class="s2">&quot;], &quot;</span><span class="n">T</span><span class="s2">&quot;: [&quot;</span><span class="n">A</span><span class="s2">&quot;, &quot;</span><span class="mi">6</span><span class="s2">&quot;]...`.</span>
+
+<span class="s2">    **relations**</span>
+
+<span class="s2">    &gt; Not implemented yet. Non-complement relations between letters.</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="n">def</span> <span class="nf">__init__</span><span class="p">(</span>
+
+        <span class="n">self</span><span class="p">,</span> <span class="n">letters</span><span class="o">=</span><span class="err">{}</span><span class="p">,</span> <span class="n">complements</span><span class="o">=</span><span class="err">{}</span><span class="p">,</span> <span class="n">relations</span><span class="o">=</span><span class="n">None</span><span class="p">,</span>
+
+    <span class="p">):</span>
+
+        <span class="k">if</span> <span class="nf">any</span><span class="p">([</span><span class="nf">len</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">for</span> <span class="n">letter</span> <span class="k">in</span> <span class="n">letters</span><span class="p">]):</span>
+
+            <span class="n">raise</span> <span class="nf">ValueError</span><span class="p">(</span><span class="s2">&quot;Multicharacter letters are not implemented yet.&quot;</span><span class="p">)</span>
+
+        <span class="n">self</span><span class="p">.</span><span class="n">letters</span> <span class="o">=</span> <span class="n">letters</span>
+
+        <span class="n">self</span><span class="p">.</span><span class="n">complements</span> <span class="o">=</span> <span class="n">complements</span>
+
+        <span class="n">self</span><span class="p">.</span><span class="n">relations</span> <span class="o">=</span> <span class="n">relations</span>
+</code></pre></div>
+
+
+</details>
+<hr />
+<h3 id="polymer">Polymer</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Polymer</span><span class="p">(</span>
+    <span class="n">sequence</span><span class="p">,</span>
+    <span class="n">alphabet</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>Class for representing a sequence with its alphabet.</p>
+<p><strong>Parameters</strong></p>
+<p><strong>sequence</strong></p>
+<blockquote>
+<p><code>Sequence</code> class instance.</p>
+</blockquote>
+<p><strong>alphabet</strong></p>
+<blockquote>
+<p><code>Alphabet</code> class instance.</p>
+</blockquote>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code><span class="s s-Atom">class</span> <span class="nv">Polymer</span><span class="s s-Atom">:</span>
+
+    <span class="s2">&quot;&quot;&quot;Class for representing a sequence with its alphabet.</span>
+
+<span class="s2">    **Parameters**</span>
+
+<span class="s2">    **sequence**</span>
+
+<span class="s2">    &gt; `Sequence` class instance.</span>
+
+<span class="s2">    **alphabet**</span>
+
+<span class="s2">    &gt; `Alphabet` class instance.</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="s s-Atom">def</span> <span class="k">__</span><span class="nf">init__</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">,</span> <span class="s s-Atom">sequence</span><span class="p">,</span> <span class="s s-Atom">alphabet</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">sequence</span> <span class="o">=</span> <span class="s s-Atom">sequence</span>
+
+        <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">alphabet</span> <span class="o">=</span> <span class="s s-Atom">alphabet</span>
+
+    <span class="s s-Atom">def</span> <span class="nf">get_choice_complement</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">,</span> <span class="s s-Atom">seq</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s2">&quot;&quot;&quot;Return the complement of a sequence string (choice).</span>
+
+<span class="s2">        **Parameters**</span>
+
+<span class="s2">        **seq**</span>
+
+<span class="s2">        &gt; String to complement (`str`).</span>
+
+<span class="s2">        &quot;&quot;&quot;</span>
+
+        <span class="s s-Atom">#</span> <span class="nv">The</span> <span class="s s-Atom">complements</span> <span class="s s-Atom">of</span> <span class="s s-Atom">a</span> <span class="s s-Atom">letter</span> <span class="s s-Atom">are</span> <span class="s s-Atom">always</span> <span class="s s-Atom">a</span> <span class="s s-Atom">list</span> <span class="s s-Atom">and</span> <span class="s s-Atom">the</span> <span class="s s-Atom">first</span> <span class="s s-Atom">one</span> <span class="o">is</span> <span class="nn">used</span><span class="p">:</span>
+
+        <span class="s s-Atom">complement</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">.</span><span class="nf">join</span><span class="p">([</span><span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">alphabet</span><span class="p">.</span><span class="s s-Atom">complements</span><span class="p">[</span><span class="s s-Atom">letter</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="s s-Atom">for</span> <span class="s s-Atom">letter</span> <span class="s s-Atom">in</span> <span class="s s-Atom">seq</span><span class="p">])</span>
+
+        <span class="s s-Atom">return</span> <span class="s s-Atom">complement</span>
+
+    <span class="s s-Atom">def</span> <span class="nf">get_segment_complement</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">,</span> <span class="s s-Atom">segment</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s2">&quot;&quot;&quot;Return the complement of a Segment.</span>
+
+<span class="s2">        **Parameters**</span>
+
+<span class="s2">        **segment**</span>
+
+<span class="s2">        &gt; `Segment` to complement.</span>
+
+<span class="s2">        &quot;&quot;&quot;</span>
+
+        <span class="s s-Atom">complement_choices</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="s s-Atom">for</span> <span class="s s-Atom">choice</span> <span class="s s-Atom">in</span> <span class="s s-Atom">segment</span><span class="p">.</span><span class="nn">choices</span><span class="p">:</span>
+
+            <span class="s s-Atom">complement_choice</span> <span class="o">=</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="nf">get_choice_complement</span><span class="p">(</span><span class="s s-Atom">choice</span><span class="p">)</span>
+
+            <span class="s s-Atom">complement_choices</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="s s-Atom">complement_choice</span><span class="p">)</span>
+
+        <span class="s s-Atom">complement_segment</span> <span class="o">=</span> <span class="nv">Segment</span><span class="p">(</span><span class="s s-Atom">complement_choices</span><span class="p">)</span>
+
+        <span class="s s-Atom">return</span> <span class="s s-Atom">complement_segment</span>
+
+    <span class="s s-Atom">def</span> <span class="nf">get_sequence_complement</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s2">&quot;&quot;&quot;Return the complement of the polymer sequence.&quot;&quot;&quot;</span>
+
+        <span class="s s-Atom">complement_segments</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="s s-Atom">for</span> <span class="s s-Atom">segment</span> <span class="s s-Atom">in</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">sequence</span><span class="p">.</span><span class="nn">segments</span><span class="p">:</span>
+
+            <span class="s s-Atom">complement_segment</span> <span class="o">=</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="nf">get_segment_complement</span><span class="p">(</span><span class="s s-Atom">segment</span><span class="p">)</span>
+
+            <span class="s s-Atom">complement_segments</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="s s-Atom">complement_segment</span><span class="p">)</span>
+
+        <span class="s s-Atom">return</span> <span class="nv">Sequence</span><span class="p">(</span><span class="s s-Atom">complement_segments</span><span class="p">,</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">sequence</span><span class="p">.</span><span class="s s-Atom">separators</span><span class="p">)</span>
+
+    <span class="s s-Atom">def</span> <span class="nf">get_choice_reverse</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">,</span> <span class="s s-Atom">seq</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s2">&quot;&quot;&quot;Get reverse of a sequence string (choice).</span>
+
+<span class="s2">        **Parameters**</span>
+
+<span class="s2">        **seq**</span>
+
+<span class="s2">        &gt; String to reverse (`str`).</span>
+
+<span class="s2">        &quot;&quot;&quot;</span>
+
+        <span class="s s-Atom">reverse</span> <span class="o">=</span> <span class="s s-Atom">seq</span><span class="p">[</span><span class="s s-Atom">::-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="s s-Atom">return</span> <span class="s s-Atom">reverse</span>
+
+    <span class="s s-Atom">def</span> <span class="nf">get_segment_reverse</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">,</span> <span class="s s-Atom">segment</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s2">&quot;&quot;&quot;Return the reverse of a Segment.</span>
+
+<span class="s2">        **Parameters**</span>
+
+<span class="s2">        **segment**</span>
+
+<span class="s2">        &gt; `Segment` to reverse.</span>
+
+<span class="s2">        &quot;&quot;&quot;</span>
+
+        <span class="s s-Atom">reverse_choices</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="s s-Atom">for</span> <span class="s s-Atom">choice</span> <span class="s s-Atom">in</span> <span class="nf">reversed</span><span class="p">(</span><span class="s s-Atom">segment</span><span class="p">.</span><span class="s s-Atom">choices</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+            <span class="s s-Atom">reverse_choice</span> <span class="o">=</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="nf">get_choice_reverse</span><span class="p">(</span><span class="s s-Atom">choice</span><span class="p">)</span>
+
+            <span class="s s-Atom">reverse_choices</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="s s-Atom">reverse_choice</span><span class="p">)</span>
+
+        <span class="s s-Atom">reverse_segment</span> <span class="o">=</span> <span class="nv">Segment</span><span class="p">(</span><span class="s s-Atom">reverse_choices</span><span class="p">)</span>
+
+        <span class="s s-Atom">return</span> <span class="s s-Atom">reverse_segment</span>
+
+    <span class="s s-Atom">def</span> <span class="nf">get_sequence_reverse</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s2">&quot;&quot;&quot;Return the reverse of the polymer sequence.&quot;&quot;&quot;</span>
+
+        <span class="s s-Atom">reverse_segments</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="s s-Atom">for</span> <span class="s s-Atom">segment</span> <span class="s s-Atom">in</span> <span class="nf">reversed</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">sequence</span><span class="p">.</span><span class="s s-Atom">segments</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+            <span class="s s-Atom">reverse_segment</span> <span class="o">=</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="nf">get_segment_reverse</span><span class="p">(</span><span class="s s-Atom">segment</span><span class="p">)</span>
+
+            <span class="s s-Atom">reverse_segments</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="s s-Atom">reverse_segment</span><span class="p">)</span>
+
+        <span class="s s-Atom">return</span> <span class="nv">Sequence</span><span class="p">(</span><span class="s s-Atom">reverse_segments</span><span class="p">,</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">sequence</span><span class="p">.</span><span class="s s-Atom">separators</span><span class="p">)</span>
+
+    <span class="s s-Atom">def</span> <span class="nf">get_sequence_reverse_complement</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s2">&quot;&quot;&quot;Return the reverse complement of the polymer sequence.&quot;&quot;&quot;</span>
+
+        <span class="s s-Atom">reverse</span> <span class="o">=</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="nf">get_sequence_reverse</span><span class="p">()</span>
+
+        <span class="s s-Atom">reversed_polymer</span> <span class="o">=</span> <span class="nv">Polymer</span><span class="p">(</span><span class="s s-Atom">sequence</span><span class="o">=</span><span class="s s-Atom">reverse</span><span class="p">,</span> <span class="s s-Atom">alphabet</span><span class="o">=</span><span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">alphabet</span><span class="p">)</span>
+
+        <span class="s s-Atom">reverse_complement</span> <span class="o">=</span> <span class="s s-Atom">reversed_polymer</span><span class="p">.</span><span class="nf">get_sequence_complement</span><span class="p">()</span>
+
+        <span class="s s-Atom">return</span> <span class="s s-Atom">reverse_complement</span>
+</code></pre></div>
+
+
+</details>
+<hr />
+<h4 id="methods">Methods</h4>
+<h5 id="get_choice_complement">get_choice_complement</h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">get_choice_complement</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">seq</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>Return the complement of a sequence string (choice).</p>
+<p><strong>Parameters</strong></p>
+<p><strong>seq</strong></p>
+<blockquote>
+<p>String to complement (<code>str</code>).</p>
+</blockquote>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code>    <span class="n">def</span> <span class="nf">get_choice_complement</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">seq</span><span class="p">):</span>
+
+        <span class="s2">&quot;&quot;&quot;Return the complement of a sequence string (choice).</span>
+
+<span class="s2">        **Parameters**</span>
+
+<span class="s2">        **seq**</span>
+
+<span class="s2">        &gt; String to complement (`str`).</span>
+
+<span class="s2">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># The complements of a letter are always a list and the first one is used:</span>
+
+        <span class="n">complement</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">.</span><span class="k">join</span><span class="p">([</span><span class="n">self</span><span class="p">.</span><span class="n">alphabet</span><span class="p">.</span><span class="n">complements</span><span class="p">[</span><span class="n">letter</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">letter</span> <span class="k">in</span> <span class="n">seq</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="n">complement</span>
+</code></pre></div>
+
+
+</details>
+<h5 id="get_choice_reverse">get_choice_reverse</h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">get_choice_reverse</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">seq</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>Get reverse of a sequence string (choice).</p>
+<p><strong>Parameters</strong></p>
+<p><strong>seq</strong></p>
+<blockquote>
+<p>String to reverse (<code>str</code>).</p>
+</blockquote>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code>    <span class="s s-Atom">def</span> <span class="nf">get_choice_reverse</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">,</span> <span class="s s-Atom">seq</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s2">&quot;&quot;&quot;Get reverse of a sequence string (choice).</span>
+
+<span class="s2">        **Parameters**</span>
+
+<span class="s2">        **seq**</span>
+
+<span class="s2">        &gt; String to reverse (`str`).</span>
+
+<span class="s2">        &quot;&quot;&quot;</span>
+
+        <span class="s s-Atom">reverse</span> <span class="o">=</span> <span class="s s-Atom">seq</span><span class="p">[</span><span class="s s-Atom">::-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="s s-Atom">return</span> <span class="s s-Atom">reverse</span>
+</code></pre></div>
+
+
+</details>
+<h5 id="get_segment_complement">get_segment_complement</h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">get_segment_complement</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">segment</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>Return the complement of a Segment.</p>
+<p><strong>Parameters</strong></p>
+<p><strong>segment</strong></p>
+<blockquote>
+<p><code>Segment</code> to complement.</p>
+</blockquote>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code>    <span class="n">def</span> <span class="nf">get_segment_complement</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">segment</span><span class="p">):</span>
+
+        <span class="s2">&quot;&quot;&quot;Return the complement of a Segment.</span>
+
+<span class="s2">        **Parameters**</span>
+
+<span class="s2">        **segment**</span>
+
+<span class="s2">        &gt; `Segment` to complement.</span>
+
+<span class="s2">        &quot;&quot;&quot;</span>
+
+        <span class="n">complement_choices</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">choice</span> <span class="k">in</span> <span class="n">segment</span><span class="p">.</span><span class="n">choices</span><span class="p">:</span>
+
+            <span class="n">complement_choice</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">get_choice_complement</span><span class="p">(</span><span class="n">choice</span><span class="p">)</span>
+
+            <span class="n">complement_choices</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">complement_choice</span><span class="p">)</span>
+
+        <span class="n">complement_segment</span> <span class="o">=</span> <span class="nf">Segment</span><span class="p">(</span><span class="n">complement_choices</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">complement_segment</span>
+</code></pre></div>
+
+
+</details>
+<h5 id="get_segment_reverse">get_segment_reverse</h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">get_segment_reverse</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">segment</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>Return the reverse of a Segment.</p>
+<p><strong>Parameters</strong></p>
+<p><strong>segment</strong></p>
+<blockquote>
+<p><code>Segment</code> to reverse.</p>
+</blockquote>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code>    <span class="n">def</span> <span class="nf">get_segment_reverse</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">segment</span><span class="p">):</span>
+
+        <span class="s2">&quot;&quot;&quot;Return the reverse of a Segment.</span>
+
+<span class="s2">        **Parameters**</span>
+
+<span class="s2">        **segment**</span>
+
+<span class="s2">        &gt; `Segment` to reverse.</span>
+
+<span class="s2">        &quot;&quot;&quot;</span>
+
+        <span class="n">reverse_choices</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">choice</span> <span class="k">in</span> <span class="nf">reversed</span><span class="p">(</span><span class="n">segment</span><span class="p">.</span><span class="n">choices</span><span class="p">):</span>
+
+            <span class="n">reverse_choice</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">get_choice_reverse</span><span class="p">(</span><span class="n">choice</span><span class="p">)</span>
+
+            <span class="n">reverse_choices</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">reverse_choice</span><span class="p">)</span>
+
+        <span class="n">reverse_segment</span> <span class="o">=</span> <span class="nf">Segment</span><span class="p">(</span><span class="n">reverse_choices</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">reverse_segment</span>
+</code></pre></div>
+
+
+</details>
+<h5 id="get_sequence_complement">get_sequence_complement</h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">get_sequence_complement</span><span class="p">(</span>
+    <span class="bp">self</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>Return the complement of the polymer sequence.</p>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code>    <span class="n">def</span> <span class="n">get_sequence_complement</span><span class="p">(</span><span class="k">self</span><span class="p">):</span>
+
+        <span class="ss">&quot;&quot;&quot;Return the complement of the polymer sequence.&quot;&quot;&quot;</span>
+
+        <span class="n">complement_segments</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">segment</span> <span class="k">in</span> <span class="k">self</span><span class="p">.</span><span class="n">sequence</span><span class="p">.</span><span class="n">segments</span><span class="p">:</span>
+
+            <span class="n">complement_segment</span> <span class="o">=</span> <span class="k">self</span><span class="p">.</span><span class="n">get_segment_complement</span><span class="p">(</span><span class="n">segment</span><span class="p">)</span>
+
+            <span class="n">complement_segments</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">complement_segment</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">Sequence</span><span class="p">(</span><span class="n">complement_segments</span><span class="p">,</span> <span class="k">self</span><span class="p">.</span><span class="n">sequence</span><span class="p">.</span><span class="n">separators</span><span class="p">)</span>
+</code></pre></div>
+
+
+</details>
+<h5 id="get_sequence_reverse">get_sequence_reverse</h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">get_sequence_reverse</span><span class="p">(</span>
+    <span class="bp">self</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>Return the reverse of the polymer sequence.</p>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code>    <span class="n">def</span> <span class="n">get_sequence_reverse</span><span class="p">(</span><span class="k">self</span><span class="p">):</span>
+
+        <span class="ss">&quot;&quot;&quot;Return the reverse of the polymer sequence.&quot;&quot;&quot;</span>
+
+        <span class="n">reverse_segments</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">segment</span> <span class="k">in</span> <span class="n">reversed</span><span class="p">(</span><span class="k">self</span><span class="p">.</span><span class="n">sequence</span><span class="p">.</span><span class="n">segments</span><span class="p">):</span>
+
+            <span class="n">reverse_segment</span> <span class="o">=</span> <span class="k">self</span><span class="p">.</span><span class="n">get_segment_reverse</span><span class="p">(</span><span class="n">segment</span><span class="p">)</span>
+
+            <span class="n">reverse_segments</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">reverse_segment</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">Sequence</span><span class="p">(</span><span class="n">reverse_segments</span><span class="p">,</span> <span class="k">self</span><span class="p">.</span><span class="n">sequence</span><span class="p">.</span><span class="n">separators</span><span class="p">)</span>
+</code></pre></div>
+
+
+</details>
+<h5 id="get_sequence_reverse_complement">get_sequence_reverse_complement</h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">get_sequence_reverse_complement</span><span class="p">(</span>
+    <span class="bp">self</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>Return the reverse complement of the polymer sequence.</p>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code>    <span class="n">def</span> <span class="n">get_sequence_reverse_complement</span><span class="p">(</span><span class="k">self</span><span class="p">):</span>
+
+        <span class="ss">&quot;&quot;&quot;Return the reverse complement of the polymer sequence.&quot;&quot;&quot;</span>
+
+        <span class="n">reverse</span> <span class="o">=</span> <span class="k">self</span><span class="p">.</span><span class="n">get_sequence_reverse</span><span class="p">()</span>
+
+        <span class="n">reversed_polymer</span> <span class="o">=</span> <span class="n">Polymer</span><span class="p">(</span><span class="n">sequence</span><span class="o">=</span><span class="n">reverse</span><span class="p">,</span> <span class="n">alphabet</span><span class="o">=</span><span class="k">self</span><span class="p">.</span><span class="n">alphabet</span><span class="p">)</span>
+
+        <span class="n">reverse_complement</span> <span class="o">=</span> <span class="n">reversed_polymer</span><span class="p">.</span><span class="n">get_sequence_complement</span><span class="p">()</span>
+
+        <span class="k">return</span> <span class="n">reverse_complement</span>
+</code></pre></div>
+
+
+</details>
+<h3 id="segment">Segment</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Segment</span><span class="p">(</span>
+    <span class="n">choices</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>Segments store the possible subsequences (choices) for a given region.</p>
+<p><strong>Parameters</strong></p>
+<p><strong>choices</strong></p>
+<blockquote>
+<p>The <code>list</code> of segment choice <code>str</code>s.</p>
+</blockquote>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code><span class="n">class</span> <span class="n">Segment</span><span class="p">:</span>
+
+    <span class="s2">&quot;&quot;&quot;Segments store the possible subsequences (choices) for a given region.</span>
+
+<span class="s2">    **Parameters**</span>
+
+<span class="s2">    **choices**</span>
+
+<span class="s2">    &gt; The `list` of segment choice `str`s.</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="n">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">choices</span><span class="p">):</span>
+
+        <span class="n">self</span><span class="p">.</span><span class="n">choices</span> <span class="o">=</span> <span class="n">choices</span>
+</code></pre></div>
+
+
+</details>
+<hr />
+<h3 id="sequence">Sequence</h3>
+<div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="nc">Sequence</span><span class="p">(</span>
+    <span class="n">segments</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">separators</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;segment&#39;</span><span class="p">:</span> <span class="s1">&#39;|&#39;</span><span class="p">,</span> <span class="s1">&#39;choice&#39;</span><span class="p">:</span> <span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;letter&#39;</span><span class="p">:</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;del&#39;</span><span class="p">:</span> <span class="s1">&#39;-&#39;</span><span class="p">}</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>The Sequence class stores the sequence (string).</p>
+<p><strong>Parameters</strong></p>
+<p><strong>segments</strong></p>
+<blockquote>
+<p>A <code>list</code> of <code>Segment</code>s.</p>
+</blockquote>
+<p><strong>separators</strong></p>
+<blockquote>
+<p>The separator characters in a <code>dict</code>. Format:
+<code>{"segment": "|", "choice": ",", "letter": ".", "del": "-"}</code>. Letter
+separators are not implemented yet.</p>
+</blockquote>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code><span class="n">class</span> <span class="n">Sequence</span><span class="p">:</span>
+
+    <span class="s2">&quot;&quot;&quot;The Sequence class stores the sequence (string).</span>
+
+<span class="s2">    **Parameters**</span>
+
+<span class="s2">    **segments**</span>
+
+<span class="s2">    &gt; A `list` of `Segment`s.</span>
+
+<span class="s2">    **separators**</span>
+
+<span class="s2">    &gt; The separator characters in a `dict`. Format:</span>
+
+<span class="s2">    `{&quot;</span><span class="n">segment</span><span class="s2">&quot;: &quot;</span><span class="o">|</span><span class="s2">&quot;, &quot;</span><span class="n">choice</span><span class="s2">&quot;: &quot;</span><span class="p">,</span><span class="s2">&quot;, &quot;</span><span class="n">letter</span><span class="s2">&quot;: &quot;</span><span class="p">.</span><span class="s2">&quot;, &quot;</span><span class="n">del</span><span class="s2">&quot;: &quot;</span><span class="o">-</span><span class="s2">&quot;}`. Letter</span>
+
+<span class="s2">    separators are not implemented yet.</span>
+
+<span class="s2">    &quot;&quot;&quot;</span>
+
+    <span class="n">def</span> <span class="nf">__init__</span><span class="p">(</span>
+
+        <span class="n">self</span><span class="p">,</span>
+
+        <span class="n">segments</span><span class="o">=</span><span class="n">None</span><span class="p">,</span>
+
+        <span class="n">separators</span><span class="o">=</span><span class="err">{</span><span class="s2">&quot;segment&quot;</span><span class="p">:</span> <span class="s2">&quot;|&quot;</span><span class="p">,</span> <span class="s2">&quot;choice&quot;</span><span class="p">:</span> <span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="s2">&quot;letter&quot;</span><span class="p">:</span> <span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;del&quot;</span><span class="p">:</span> <span class="s2">&quot;-&quot;</span><span class="err">}</span><span class="p">,</span>
+
+    <span class="p">):</span>
+
+        <span class="k">if</span> <span class="n">segments</span> <span class="k">is</span> <span class="n">None</span><span class="p">:</span>
+
+            <span class="n">self</span><span class="p">.</span><span class="n">segments</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="n">self</span><span class="p">.</span><span class="n">segments</span> <span class="o">=</span> <span class="n">segments</span>
+
+        <span class="n">self</span><span class="p">.</span><span class="n">separators</span> <span class="o">=</span> <span class="n">separators</span>
+
+    <span class="n">def</span> <span class="nf">create_choices_from_string</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">string</span><span class="p">):</span>
+
+        <span class="n">choices</span> <span class="o">=</span> <span class="n">string</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">separators</span><span class="p">[</span><span class="s2">&quot;choice&quot;</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="k">not</span> <span class="k">all</span><span class="p">([</span><span class="nf">len</span><span class="p">(</span><span class="n">choice</span><span class="p">)</span> <span class="o">==</span> <span class="nf">len</span><span class="p">(</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">choice</span> <span class="k">in</span> <span class="n">choices</span><span class="p">]):</span>
+
+            <span class="n">raise</span> <span class="nf">ValueError</span><span class="p">(</span><span class="s2">&quot;Choices of a segment must have the same length.&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">choices</span>
+
+    <span class="n">def</span> <span class="nf">create_segments_from_string</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">string</span><span class="p">):</span>
+
+        <span class="s2">&quot;&quot;&quot;Create a list of `Segment` instances from the sequence attribute.&quot;&quot;&quot;</span>
+
+        <span class="k">separator</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">separators</span><span class="p">[</span><span class="s2">&quot;segment&quot;</span><span class="p">]</span>
+
+        <span class="n">segment_strings</span> <span class="o">=</span> <span class="n">string</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="k">separator</span><span class="p">)</span>
+
+        <span class="n">segments</span> <span class="o">=</span> <span class="p">[</span>
+
+            <span class="nf">Segment</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="nf">create_choices_from_string</span><span class="p">(</span><span class="n">string</span><span class="p">))</span>
+
+            <span class="k">for</span> <span class="n">string</span> <span class="k">in</span> <span class="n">segment_strings</span>
+
+        <span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">segments</span>
+
+    <span class="n">def</span> <span class="nf">add_sequence_from_string</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">string</span><span class="p">):</span>
+
+        <span class="s2">&quot;&quot;&quot;Convert a string into segments and append to the sequence.</span>
+
+<span class="s2">        **Parameters**</span>
+
+<span class="s2">        **string**</span>
+
+<span class="s2">        &gt; `str`.</span>
+
+<span class="s2">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">self</span><span class="p">.</span><span class="n">segments</span> <span class="k">is</span> <span class="p">[]:</span>
+
+            <span class="n">self</span><span class="p">.</span><span class="n">segments</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">create_segments_from_string</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="n">self</span><span class="p">.</span><span class="n">segments</span> <span class="o">+=</span> <span class="n">self</span><span class="p">.</span><span class="nf">create_segments_from_string</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+
+    <span class="n">def</span> <span class="nf">calculate_number_of_combinations</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+
+        <span class="s2">&quot;&quot;&quot;Calculate the number of exact sequences represented.&quot;&quot;&quot;</span>
+
+        <span class="n">multiplier_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">segment</span> <span class="k">in</span> <span class="n">self</span><span class="p">.</span><span class="n">segments</span><span class="p">:</span>
+
+            <span class="n">multiplier_list</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">segment</span><span class="p">.</span><span class="n">choices</span><span class="p">))</span>
+
+        <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="k">for</span> <span class="n">multiplier</span> <span class="k">in</span> <span class="n">multiplier_list</span><span class="p">:</span>
+
+            <span class="n">x</span> <span class="o">*=</span> <span class="n">multiplier</span>
+
+        <span class="k">return</span> <span class="n">x</span>
+
+    <span class="n">def</span> <span class="nf">to_string</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+
+        <span class="s2">&quot;&quot;&quot;Return a string representation of the ambiguous sequence.&quot;&quot;&quot;</span>
+
+        <span class="n">joined_choices</span> <span class="o">=</span> <span class="p">[</span>
+
+            <span class="n">self</span><span class="p">.</span><span class="n">separators</span><span class="p">[</span><span class="s2">&quot;choice&quot;</span><span class="p">].</span><span class="k">join</span><span class="p">(</span><span class="n">segment</span><span class="p">.</span><span class="n">choices</span><span class="p">)</span> <span class="k">for</span> <span class="n">segment</span> <span class="k">in</span> <span class="n">self</span><span class="p">.</span><span class="n">segments</span>
+
+        <span class="p">]</span>
+
+        <span class="n">string</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">separators</span><span class="p">[</span><span class="s2">&quot;segment&quot;</span><span class="p">].</span><span class="k">join</span><span class="p">(</span><span class="n">joined_choices</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">string</span>
+</code></pre></div>
+
+
+</details>
+<hr />
+<h4 id="methods_1">Methods</h4>
+<h5 id="add_sequence_from_string">add_sequence_from_string</h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">add_sequence_from_string</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">string</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>Convert a string into segments and append to the sequence.</p>
+<p><strong>Parameters</strong></p>
+<p><strong>string</strong></p>
+<blockquote>
+<p><code>str</code>.</p>
+</blockquote>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code>    <span class="n">def</span> <span class="nf">add_sequence_from_string</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">string</span><span class="p">):</span>
+
+        <span class="s2">&quot;&quot;&quot;Convert a string into segments and append to the sequence.</span>
+
+<span class="s2">        **Parameters**</span>
+
+<span class="s2">        **string**</span>
+
+<span class="s2">        &gt; `str`.</span>
+
+<span class="s2">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">self</span><span class="p">.</span><span class="n">segments</span> <span class="k">is</span> <span class="p">[]:</span>
+
+            <span class="n">self</span><span class="p">.</span><span class="n">segments</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">create_segments_from_string</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="n">self</span><span class="p">.</span><span class="n">segments</span> <span class="o">+=</span> <span class="n">self</span><span class="p">.</span><span class="nf">create_segments_from_string</span><span class="p">(</span><span class="n">string</span><span class="p">)</span>
+</code></pre></div>
+
+
+</details>
+<h5 id="calculate_number_of_combinations">calculate_number_of_combinations</h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">calculate_number_of_combinations</span><span class="p">(</span>
+    <span class="bp">self</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>Calculate the number of exact sequences represented.</p>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code>    <span class="n">def</span> <span class="n">calculate_number_of_combinations</span><span class="p">(</span><span class="k">self</span><span class="p">):</span>
+
+        <span class="ss">&quot;&quot;&quot;Calculate the number of exact sequences represented.&quot;&quot;&quot;</span>
+
+        <span class="n">multiplier_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">for</span> <span class="n">segment</span> <span class="k">in</span> <span class="k">self</span><span class="p">.</span><span class="n">segments</span><span class="p">:</span>
+
+            <span class="n">multiplier_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">len</span><span class="p">(</span><span class="n">segment</span><span class="p">.</span><span class="n">choices</span><span class="p">))</span>
+
+        <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="k">for</span> <span class="n">multiplier</span> <span class="k">in</span> <span class="n">multiplier_list</span><span class="p">:</span>
+
+            <span class="n">x</span> <span class="o">*=</span> <span class="n">multiplier</span>
+
+        <span class="k">return</span> <span class="n">x</span>
+</code></pre></div>
+
+
+</details>
+<h5 id="create_choices_from_string">create_choices_from_string</h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">create_choices_from_string</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">string</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code>    <span class="n">def</span> <span class="n">create_choices_from_string</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="n">string</span><span class="p">):</span>
+
+        <span class="n">choices</span> <span class="o">=</span> <span class="n">string</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="k">self</span><span class="p">.</span><span class="n">separators</span><span class="p">[</span><span class="ss">&quot;choice&quot;</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="k">not</span> <span class="k">all</span><span class="p">([</span><span class="n">len</span><span class="p">(</span><span class="n">choice</span><span class="p">)</span> <span class="o">==</span> <span class="n">len</span><span class="p">(</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">choice</span> <span class="k">in</span> <span class="n">choices</span><span class="p">]):</span>
+
+            <span class="n">raise</span> <span class="n">ValueError</span><span class="p">(</span><span class="ss">&quot;Choices of a segment must have the same length.&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">choices</span>
+</code></pre></div>
+
+
+</details>
+<h5 id="create_segments_from_string">create_segments_from_string</h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">create_segments_from_string</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">string</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>Create a list of <code>Segment</code> instances from the sequence attribute.</p>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code>    <span class="n">def</span> <span class="nf">create_segments_from_string</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">string</span><span class="p">):</span>
+
+        <span class="s2">&quot;&quot;&quot;Create a list of `Segment` instances from the sequence attribute.&quot;&quot;&quot;</span>
+
+        <span class="k">separator</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">separators</span><span class="p">[</span><span class="s2">&quot;segment&quot;</span><span class="p">]</span>
+
+        <span class="n">segment_strings</span> <span class="o">=</span> <span class="n">string</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="k">separator</span><span class="p">)</span>
+
+        <span class="n">segments</span> <span class="o">=</span> <span class="p">[</span>
+
+            <span class="nf">Segment</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="nf">create_choices_from_string</span><span class="p">(</span><span class="n">string</span><span class="p">))</span>
+
+            <span class="k">for</span> <span class="n">string</span> <span class="k">in</span> <span class="n">segment_strings</span>
+
+        <span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">segments</span>
+</code></pre></div>
+
+
+</details>
+<h5 id="to_string">to_string</h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">to_string</span><span class="p">(</span>
+    <span class="bp">self</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>Return a string representation of the ambiguous sequence.</p>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code>    <span class="n">def</span> <span class="n">to_string</span><span class="p">(</span><span class="k">self</span><span class="p">):</span>
+
+        <span class="ss">&quot;&quot;&quot;Return a string representation of the ambiguous sequence.&quot;&quot;&quot;</span>
+
+        <span class="n">joined_choices</span> <span class="o">=</span> <span class="p">[</span>
+
+            <span class="k">self</span><span class="p">.</span><span class="n">separators</span><span class="p">[</span><span class="ss">&quot;choice&quot;</span><span class="p">].</span><span class="k">join</span><span class="p">(</span><span class="n">segment</span><span class="p">.</span><span class="n">choices</span><span class="p">)</span> <span class="k">for</span> <span class="n">segment</span> <span class="k">in</span> <span class="k">self</span><span class="p">.</span><span class="n">segments</span>
+
+        <span class="p">]</span>
+
+        <span class="n">string</span> <span class="o">=</span> <span class="k">self</span><span class="p">.</span><span class="n">separators</span><span class="p">[</span><span class="ss">&quot;segment&quot;</span><span class="p">].</span><span class="k">join</span><span class="p">(</span><span class="n">joined_choices</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">string</span>
+</code></pre></div>
+
+
+</details>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../" title="Index" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Index
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../version/" title="Version" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Version
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Powered by
+        <a href="http://timothycrosley.github.io/portray">portray.</a>
+        You too can
+        <a href="http://timothycrosley.github.io/portray">
+          portray</a>
+        your Python project well using automatic documentation.
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.92ffa368.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.5123e3d4.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
