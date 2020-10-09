@@ -5,6 +5,9 @@
 
 # Polymera
 
+[![Build Status](https://travis-ci.org/Edinburgh-Genome-Foundry/Polymera.svg?branch=main)](https://travis-ci.org/Edinburgh-Genome-Foundry/Polymera)
+[![Coverage Status](https://coveralls.io/repos/github/Edinburgh-Genome-Foundry/Polymera/badge.svg?branch=main)](https://coveralls.io/github/Edinburgh-Genome-Foundry/Polymera?branch=main)
+
 **Work in progress!**
 
 Polymera is a Python package for representing *ambiguous sequences.* An ambiguous sequence has a number of possible letters (symbols, elements) at each position. Additionally, Polymera can model sequences written with *complement alphabets.* Each letter of a complement alphabet can form a pair with specific letters, their *complements.*
