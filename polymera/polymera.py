@@ -96,6 +96,14 @@ class Polymer:
             reverse_segments.append(reverse_segment)
         return Sequence(reverse_segments, self.sequence.separators)
 
+    def get_sequence_reverse_complement(self):
+        """Return the reverse complement of the polymer sequence."""
+        reverse = self.get_sequence_reverse()
+        reversed_polymer = Polymer(sequence=reverse, alphabet=self.alphabet)
+        reverse_complement = reversed_polymer.get_sequence_complement()
+
+        return reverse_complement
+
 
 class Alphabet:
     """The Alphabet class describes the relations between the letters.
