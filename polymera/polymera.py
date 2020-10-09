@@ -14,17 +14,6 @@ class Polymer:
     def __init__(self, sequence, alphabet):
         self.sequence = sequence
         self.alphabet = alphabet
-        self.segments = self.get_segments()
-
-    def get_segments(self):
-        """Create a list of `Segment` instances from the sequence attribute."""
-        separator = self.sequence.separators["segment"]
-        segment_strings = self.sequence.sequence.split(separator)
-
-        choice_separator = self.sequence.separators["choice"]
-        segments = [Segment(string, choice_separator) for string in segment_strings]
-
-        return segments
 
 
 class Alphabet:
@@ -86,6 +75,18 @@ class Sequence:
     ):
         self.sequence = sequence
         self.separators = separators
+
+        self.segments = self.get_segments()
+
+    def get_segments(self):
+        """Create a list of `Segment` instances from the sequence attribute."""
+        separator = self.separators["segment"]
+        segment_strings = self.sequence.split(separator)
+
+        choice_separator = self.separators["choice"]
+        segments = [Segment(string, choice_separator) for string in segment_strings]
+
+        return segments
 
 
 class Segment:
