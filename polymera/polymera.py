@@ -79,7 +79,7 @@ class Polymer:
         """
 
         reverse_choices = []
-        for choice in segment.choices:
+        for choice in reversed(segment.choices):
             reverse_choice = self.get_choice_reverse(choice)
             reverse_choices.append(reverse_choice)
 
@@ -90,7 +90,7 @@ class Polymer:
     def get_sequence_reverse(self):
         """Return the reverse of the polymer sequence."""
         reverse_segments = []
-        for segment in self.sequence.segments:
+        for segment in reversed(self.sequence.segments):
             reverse_segment = self.get_segment_reverse(segment)
 
             reverse_segments.append(reverse_segment)
