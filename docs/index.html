@@ -549,8 +549,10 @@
 </p>
 
 <h1 id="polymera">Polymera</h1>
+<p><a href="https://travis-ci.org/Edinburgh-Genome-Foundry/Polymera"><img alt="Build Status" src="https://travis-ci.org/Edinburgh-Genome-Foundry/Polymera.svg?branch=main" /></a>
+<a href="https://coveralls.io/github/Edinburgh-Genome-Foundry/Polymera?branch=main"><img alt="Coverage Status" src="https://coveralls.io/repos/github/Edinburgh-Genome-Foundry/Polymera/badge.svg?branch=main" /></a></p>
 <p><strong>Work in progress!</strong></p>
-<p>Polymera is a Python package for representing <em>ambiguous sequences.</em> An ambiguous sequence has a number of multiple possible letters (symbols, elements) at each position. Additionally, Polymera can model sequences written with <em>complement alphabets.</em> Each letter of a complement alphabet can form a pair with specific letters, their <em>complements.</em></p>
+<p>Polymera is a Python package for representing <em>ambiguous sequences.</em> An ambiguous sequence has a number of possible letters (symbols, elements) at each position. Additionally, Polymera can model sequences written with <em>complement alphabets.</em> Each letter of a complement alphabet can form a pair with specific letters, their <em>complements.</em></p>
 <p>These sequences can describe linear polymers, for example DNA, that can pair with a complement polymer.</p>
 <p><em>Polymera</em> is a genus of crane fly.</p>
 <h2 id="details">Details</h2>
@@ -565,17 +567,17 @@
 </code></pre></div>
 
 
-<p>The choices can span multiple positions with multiletter choices (<code>GCG|ATC,AGA|TC,GT|AGCA</code>) and can contain deletions (indels), marked with <code>-</code>: <code>GTAGTG|AT,-T|TAA</code>. Note that <code>|AATCCGTCAA|</code> does not equal to <code>|AA|TCCGTC|AA|</code> because the segment boundaries specify the full subsequence that <em>has</em> to exist together in the sequence.</p>
-<p>Finally, the letters can be written with multiple characters, using a separator character between the letters (<code>.</code>):
-<code>A,6mA|T.G.C.T|5mC,C|G.C.5mC</code>.
-This is useful if we want to represent similarities between some letters in a readable way. In the example above, <code>A</code> = adenine, <code>6mA</code> = N6-methyladenine, <code>5mC</code> = C5-methylcytosine. Another example is writing diphthongs, for example <code>ae</code>.</p>
+<p>The choices can span multiple positions with multiletter choices (<code>GCG|ATC,AGA|TC,GT|AGCA</code>) and can contain deletions (indels), marked with <code>-</code> (hyphen): <code>GTAGTG|AT,-T|TAA</code>. Note that <code>|AATCCGTCAA|</code> does <em>not</em> equal to <code>|AA|TCCGTC|AA|</code> because the segment boundaries specify the full subsequence that <em>has</em> to exist as is, in the sequence.</p>
+<p>Finally, the letters can be written with multiple characters, using a separator character between the letters (<code>.</code>, period): <code>A,6mA|T.G.C.T|5mC,C|G.C.5mC</code>. This is useful if we want to represent similarities between some letters in a readable way. In the example above the multiletters denote methylated variants of the standard letters: <code>A</code> = adenine, <code>6mA</code> = N6-methyladenine, <code>C</code> = cytosine, <code>5mC</code> = C5-methylcytosine. Another example is writing diphthongs, for example <code>ae</code>.</p>
 <h3 id="information-content">Information content</h3>
 <p>Note that in a sequence, an ambiguous position can mean one of two things:</p>
 <ol>
 <li>Options: all letters noted in the position are suitable.</li>
 <li>Uncertainty: it's not exactly known what letter occupies the position.</li>
 </ol>
-<p>This has implications for the information content of the sequence.</p>
+<p>This has implications for interpreting the Shannon information content of the sequence. For case (1) above (options), the Shannon information of a letter position is -log2(p), where p = 1 / n, with n letters in the alphabet. The information of a 1 letter-long sequence with 2 choices (e.g. <code>A,T</code>), from a 4-letter alphabet is 2 bit: -log2(1/4). For calculating information of longer sequences, the information of a position is multiplied by the length of the sequence.</p>
+<p>For case (2) (uncertainty), the probability (p) is calculated as the number of sequences represented divided by the number of possible sequences with the same length. Thus the information of <code>A,T</code> (which means one of <code>A</code> or <code>T</code>, but not known which one) is only 1 bit: -log2(2/4).
+Consequently, the information of the uncertain letter <code>A,T,C,G</code> (representing <code>A</code> or <code>T</code> or <code>C</code> or <code>G</code>) is zero, because -log2(4/4) = 0.</p>
 <h2 id="install">Install</h2>
 <div class="codehilite"><pre><span></span><code>pip install polymera
 </code></pre></div>
@@ -596,7 +598,23 @@ This is useful if we want to represent similarities between some letters in a re
 </code></pre></div>
 
 
-<p>Returns <code>TTTTTTCTAATATA|GGCAT,TTCAT</code></p>
+<p>Returns <code>TTTTTTCTAATATA|GGCAT,TTCAT</code>.</p>
+<p>Polymera can calculate the information of a sequence:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">sequence</span> <span class="o">=</span> <span class="n">polymera</span><span class="o">.</span><span class="n">Sequence</span><span class="p">()</span>
+<span class="n">sequence</span><span class="o">.</span><span class="n">add_sequence_from_string</span><span class="p">(</span><span class="s2">&quot;T,A&quot;</span><span class="p">)</span>
+<span class="n">polymer</span> <span class="o">=</span> <span class="n">polymera</span><span class="o">.</span><span class="n">Polymer</span><span class="p">(</span>
+    <span class="n">sequence</span><span class="p">,</span> <span class="n">alphabet</span><span class="o">=</span><span class="n">polymera</span><span class="o">.</span><span class="n">Alphabet</span><span class="p">(</span><span class="n">letters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;T&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="s2">&quot;G&quot;</span><span class="p">})</span>
+<span class="p">)</span>
+<span class="n">polymer</span><span class="o">.</span><span class="n">get_information_content</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;option&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>Returns 2.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">polymer</span><span class="o">.</span><span class="n">get_information_content</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;uncertainty&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>Returns 1.</p>
 <h2 id="versioning">Versioning</h2>
 <p>Polymera uses the <a href="https://semver.org">semantic versioning</a> scheme.</p>
 <h2 id="license-mit">License = MIT</h2>

@@ -337,6 +337,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#get_information_content" class="md-nav__link">
+    get_information_content
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_option_information_content" class="md-nav__link">
+    get_option_information_content
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#get_segment_complement" class="md-nav__link">
     get_segment_complement
   </a>
@@ -367,6 +381,13 @@
           <li class="md-nav__item">
   <a href="#get_sequence_reverse_complement" class="md-nav__link">
     get_sequence_reverse_complement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_uncertainty_information_content" class="md-nav__link">
+    get_uncertainty_information_content
   </a>
   
 </li>
@@ -428,6 +449,13 @@
           <li class="md-nav__item">
   <a href="#create_segments_from_string" class="md-nav__link">
     create_segments_from_string
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_length" class="md-nav__link">
+    get_length
   </a>
   
 </li>
@@ -620,6 +648,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#get_information_content" class="md-nav__link">
+    get_information_content
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_option_information_content" class="md-nav__link">
+    get_option_information_content
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#get_segment_complement" class="md-nav__link">
     get_segment_complement
   </a>
@@ -650,6 +692,13 @@
           <li class="md-nav__item">
   <a href="#get_sequence_reverse_complement" class="md-nav__link">
     get_sequence_reverse_complement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_uncertainty_information_content" class="md-nav__link">
+    get_uncertainty_information_content
   </a>
   
 </li>
@@ -716,6 +765,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#get_length" class="md-nav__link">
+    get_length
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#to_string" class="md-nav__link">
     to_string
   </a>
@@ -758,7 +814,9 @@
                 
                 
                 <h1 id="module-polymerapolymera">Module polymera.polymera</h1>
-<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code><span class="s s-Atom">class</span> <span class="nv">Polymer</span><span class="s s-Atom">:</span>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code><span class="s s-Atom">import</span> <span class="s s-Atom">math</span>
+
+<span class="s s-Atom">class</span> <span class="nv">Polymer</span><span class="s s-Atom">:</span>
 
     <span class="s2">&quot;&quot;&quot;Class for representing a sequence with its alphabet.</span>
 
@@ -901,6 +959,82 @@
         <span class="s s-Atom">reverse_complement</span> <span class="o">=</span> <span class="s s-Atom">reversed_polymer</span><span class="p">.</span><span class="nf">get_sequence_complement</span><span class="p">()</span>
 
         <span class="s s-Atom">return</span> <span class="s s-Atom">reverse_complement</span>
+
+    <span class="s s-Atom">def</span> <span class="nf">get_information_content</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">,</span> <span class="s s-Atom">method</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s2">&quot;&quot;&quot;Get information content of the polymer sequence in bits.</span>
+
+<span class="s2">        An ambiguous position can mean one of two things in a sequence:</span>
+
+<span class="s2">        1. Options: all letters noted in the position are suitable.</span>
+
+<span class="s2">        2. Uncertainty: it&#39;s not exactly known what letter occupies the position.</span>
+
+<span class="s2">        **Parameters**</span>
+
+<span class="s2">        **method**</span>
+
+<span class="s2">        &gt; Interpretation of ambiguity (`str`): `option` or `uncertainty`.</span>
+
+<span class="s2">        &quot;&quot;&quot;</span>
+
+        <span class="s s-Atom">if</span> <span class="s s-Atom">method</span> <span class="o">==</span> <span class="s2">&quot;option&quot;</span><span class="s s-Atom">:</span>
+
+            <span class="s s-Atom">return</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="nf">get_option_information_content</span><span class="p">()</span>
+
+        <span class="s s-Atom">elif</span> <span class="s s-Atom">method</span> <span class="o">==</span> <span class="s2">&quot;uncertainty&quot;</span><span class="s s-Atom">:</span>
+
+            <span class="s s-Atom">return</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="nf">get_uncertainty_information_content</span><span class="p">()</span>
+
+        <span class="nn">else</span><span class="p">:</span>
+
+            <span class="s s-Atom">raise</span> <span class="nv">ValueError</span><span class="p">(</span><span class="s2">&quot;`method` must be one of `option` or `uncertainty`&quot;</span><span class="p">)</span>
+
+    <span class="s s-Atom">def</span> <span class="nf">get_option_information_content</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s2">&quot;&quot;&quot;Get information content of the polymer sequence.</span>
+
+<span class="s2">        Ambiguity is interpreted as options.</span>
+
+<span class="s2">        &quot;&quot;&quot;</span>
+
+        <span class="s s-Atom">total_length</span> <span class="o">=</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">sequence</span><span class="p">.</span><span class="nf">get_length</span><span class="p">()</span>
+
+        <span class="s s-Atom">number_of_letters</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">alphabet</span><span class="p">.</span><span class="s s-Atom">letters</span><span class="p">)</span>
+
+        <span class="s s-Atom">p</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="s s-Atom">number_of_letters</span>  <span class="s s-Atom">#</span> <span class="s s-Atom">probability</span>
+
+        <span class="s s-Atom">#</span> <span class="nv">Shannon</span> <span class="s s-Atom">information</span> <span class="s s-Atom">per</span> <span class="nn">letter</span><span class="p">:</span> <span class="o">-</span><span class="s s-Atom">log_2</span> <span class="s s-Atom">p</span>
+
+        <span class="s s-Atom">log2_p</span> <span class="o">=</span> <span class="s s-Atom">math</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s s-Atom">p</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="s s-Atom">information</span> <span class="o">=</span> <span class="o">-</span><span class="s s-Atom">log2_p</span> <span class="o">*</span> <span class="s s-Atom">total_length</span>
+
+        <span class="s s-Atom">return</span> <span class="s s-Atom">information</span>
+
+    <span class="s s-Atom">def</span> <span class="nf">get_uncertainty_information_content</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s2">&quot;&quot;&quot;Get information content of the polymer sequence.</span>
+
+<span class="s2">        Ambiguity is interpreted as uncertainty: the information content equals to the</span>
+
+<span class="s2">        negative base 2 logarithm of the probability of the sequence. The probability</span>
+
+<span class="s2">        equals to the number of sequences represented, divided by the number of possible</span>
+
+<span class="s2">        sequences with the same length: -log2(represented / possible).</span>
+
+<span class="s2">        &quot;&quot;&quot;</span>
+
+        <span class="s s-Atom">total_possible</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">alphabet</span><span class="p">.</span><span class="s s-Atom">letters</span><span class="p">)</span> <span class="s s-Atom">**</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">sequence</span><span class="p">.</span><span class="nf">get_length</span><span class="p">()</span>
+
+        <span class="s s-Atom">p</span> <span class="o">=</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">sequence</span><span class="p">.</span><span class="nf">calculate_number_of_combinations</span><span class="p">()</span> <span class="o">/</span> <span class="s s-Atom">total_possible</span>
+
+        <span class="s s-Atom">log2_p</span> <span class="o">=</span> <span class="s s-Atom">math</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s s-Atom">p</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="s s-Atom">information</span> <span class="o">=</span> <span class="o">-</span><span class="s s-Atom">log2_p</span>
+
+        <span class="s s-Atom">return</span> <span class="s s-Atom">information</span>
 
 <span class="s s-Atom">class</span> <span class="nv">Alphabet</span><span class="s s-Atom">:</span>
 
@@ -1057,6 +1191,20 @@
         <span class="s s-Atom">string</span> <span class="o">=</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">separators</span><span class="p">[</span><span class="s2">&quot;segment&quot;</span><span class="p">].</span><span class="nf">join</span><span class="p">(</span><span class="s s-Atom">joined_choices</span><span class="p">)</span>
 
         <span class="s s-Atom">return</span> <span class="s s-Atom">string</span>
+
+    <span class="s s-Atom">def</span> <span class="nf">get_length</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s2">&quot;&quot;&quot;Return the length of the sequence.&quot;&quot;&quot;</span>
+
+        <span class="s s-Atom">total_length</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="s s-Atom">for</span> <span class="s s-Atom">segment</span> <span class="s s-Atom">in</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="nn">segments</span><span class="p">:</span>
+
+            <span class="s s-Atom">#</span> <span class="nv">All</span> <span class="s s-Atom">choices</span> <span class="s s-Atom">of</span> <span class="s s-Atom">a</span> <span class="s s-Atom">segment</span> <span class="s s-Atom">have</span> <span class="s s-Atom">the</span> <span class="s s-Atom">same</span> <span class="s s-Atom">length</span><span class="p">,</span> <span class="s s-Atom">so</span> <span class="s s-Atom">the</span> <span class="s s-Atom">first</span> <span class="o">is</span> <span class="nn">used</span><span class="p">:</span>
+
+            <span class="s s-Atom">total_length</span> <span class="s s-Atom">+=</span> <span class="nf">len</span><span class="p">(</span><span class="s s-Atom">segment</span><span class="p">.</span><span class="s s-Atom">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="s s-Atom">return</span> <span class="s s-Atom">total_length</span>
 
 <span class="s s-Atom">class</span> <span class="nv">Segment</span><span class="s s-Atom">:</span>
 
@@ -1302,6 +1450,82 @@
         <span class="s s-Atom">reverse_complement</span> <span class="o">=</span> <span class="s s-Atom">reversed_polymer</span><span class="p">.</span><span class="nf">get_sequence_complement</span><span class="p">()</span>
 
         <span class="s s-Atom">return</span> <span class="s s-Atom">reverse_complement</span>
+
+    <span class="s s-Atom">def</span> <span class="nf">get_information_content</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">,</span> <span class="s s-Atom">method</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s2">&quot;&quot;&quot;Get information content of the polymer sequence in bits.</span>
+
+<span class="s2">        An ambiguous position can mean one of two things in a sequence:</span>
+
+<span class="s2">        1. Options: all letters noted in the position are suitable.</span>
+
+<span class="s2">        2. Uncertainty: it&#39;s not exactly known what letter occupies the position.</span>
+
+<span class="s2">        **Parameters**</span>
+
+<span class="s2">        **method**</span>
+
+<span class="s2">        &gt; Interpretation of ambiguity (`str`): `option` or `uncertainty`.</span>
+
+<span class="s2">        &quot;&quot;&quot;</span>
+
+        <span class="s s-Atom">if</span> <span class="s s-Atom">method</span> <span class="o">==</span> <span class="s2">&quot;option&quot;</span><span class="s s-Atom">:</span>
+
+            <span class="s s-Atom">return</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="nf">get_option_information_content</span><span class="p">()</span>
+
+        <span class="s s-Atom">elif</span> <span class="s s-Atom">method</span> <span class="o">==</span> <span class="s2">&quot;uncertainty&quot;</span><span class="s s-Atom">:</span>
+
+            <span class="s s-Atom">return</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="nf">get_uncertainty_information_content</span><span class="p">()</span>
+
+        <span class="nn">else</span><span class="p">:</span>
+
+            <span class="s s-Atom">raise</span> <span class="nv">ValueError</span><span class="p">(</span><span class="s2">&quot;`method` must be one of `option` or `uncertainty`&quot;</span><span class="p">)</span>
+
+    <span class="s s-Atom">def</span> <span class="nf">get_option_information_content</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s2">&quot;&quot;&quot;Get information content of the polymer sequence.</span>
+
+<span class="s2">        Ambiguity is interpreted as options.</span>
+
+<span class="s2">        &quot;&quot;&quot;</span>
+
+        <span class="s s-Atom">total_length</span> <span class="o">=</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">sequence</span><span class="p">.</span><span class="nf">get_length</span><span class="p">()</span>
+
+        <span class="s s-Atom">number_of_letters</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">alphabet</span><span class="p">.</span><span class="s s-Atom">letters</span><span class="p">)</span>
+
+        <span class="s s-Atom">p</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="s s-Atom">number_of_letters</span>  <span class="s s-Atom">#</span> <span class="s s-Atom">probability</span>
+
+        <span class="s s-Atom">#</span> <span class="nv">Shannon</span> <span class="s s-Atom">information</span> <span class="s s-Atom">per</span> <span class="nn">letter</span><span class="p">:</span> <span class="o">-</span><span class="s s-Atom">log_2</span> <span class="s s-Atom">p</span>
+
+        <span class="s s-Atom">log2_p</span> <span class="o">=</span> <span class="s s-Atom">math</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s s-Atom">p</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="s s-Atom">information</span> <span class="o">=</span> <span class="o">-</span><span class="s s-Atom">log2_p</span> <span class="o">*</span> <span class="s s-Atom">total_length</span>
+
+        <span class="s s-Atom">return</span> <span class="s s-Atom">information</span>
+
+    <span class="s s-Atom">def</span> <span class="nf">get_uncertainty_information_content</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">)</span><span class="s s-Atom">:</span>
+
+        <span class="s2">&quot;&quot;&quot;Get information content of the polymer sequence.</span>
+
+<span class="s2">        Ambiguity is interpreted as uncertainty: the information content equals to the</span>
+
+<span class="s2">        negative base 2 logarithm of the probability of the sequence. The probability</span>
+
+<span class="s2">        equals to the number of sequences represented, divided by the number of possible</span>
+
+<span class="s2">        sequences with the same length: -log2(represented / possible).</span>
+
+<span class="s2">        &quot;&quot;&quot;</span>
+
+        <span class="s s-Atom">total_possible</span> <span class="o">=</span> <span class="nf">len</span><span class="p">(</span><span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">alphabet</span><span class="p">.</span><span class="s s-Atom">letters</span><span class="p">)</span> <span class="s s-Atom">**</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">sequence</span><span class="p">.</span><span class="nf">get_length</span><span class="p">()</span>
+
+        <span class="s s-Atom">p</span> <span class="o">=</span> <span class="s s-Atom">self</span><span class="p">.</span><span class="s s-Atom">sequence</span><span class="p">.</span><span class="nf">calculate_number_of_combinations</span><span class="p">()</span> <span class="o">/</span> <span class="s s-Atom">total_possible</span>
+
+        <span class="s s-Atom">log2_p</span> <span class="o">=</span> <span class="s s-Atom">math</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s s-Atom">p</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="s s-Atom">information</span> <span class="o">=</span> <span class="o">-</span><span class="s s-Atom">log2_p</span>
+
+        <span class="s s-Atom">return</span> <span class="s s-Atom">information</span>
 </code></pre></div>
 
 
@@ -1372,6 +1596,90 @@
         <span class="s s-Atom">reverse</span> <span class="o">=</span> <span class="s s-Atom">seq</span><span class="p">[</span><span class="s s-Atom">::-</span><span class="mi">1</span><span class="p">]</span>
 
         <span class="s s-Atom">return</span> <span class="s s-Atom">reverse</span>
+</code></pre></div>
+
+
+</details>
+<h5 id="get_information_content">get_information_content</h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">get_information_content</span><span class="p">(</span>
+    <span class="bp">self</span><span class="p">,</span>
+    <span class="n">method</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>Get information content of the polymer sequence in bits.</p>
+<p>An ambiguous position can mean one of two things in a sequence:
+1. Options: all letters noted in the position are suitable.
+2. Uncertainty: it's not exactly known what letter occupies the position.</p>
+<p><strong>Parameters</strong></p>
+<p><strong>method</strong></p>
+<blockquote>
+<p>Interpretation of ambiguity (<code>str</code>): <code>option</code> or <code>uncertainty</code>.</p>
+</blockquote>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code>    <span class="n">def</span> <span class="nf">get_information_content</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">method</span><span class="p">):</span>
+
+        <span class="s2">&quot;&quot;&quot;Get information content of the polymer sequence in bits.</span>
+
+<span class="s2">        An ambiguous position can mean one of two things in a sequence:</span>
+
+<span class="s2">        1. Options: all letters noted in the position are suitable.</span>
+
+<span class="s2">        2. Uncertainty: it&#39;s not exactly known what letter occupies the position.</span>
+
+<span class="s2">        **Parameters**</span>
+
+<span class="s2">        **method**</span>
+
+<span class="s2">        &gt; Interpretation of ambiguity (`str`): `option` or `uncertainty`.</span>
+
+<span class="s2">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;option&quot;</span><span class="p">:</span>
+
+            <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="nf">get_option_information_content</span><span class="p">()</span>
+
+        <span class="n">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;uncertainty&quot;</span><span class="p">:</span>
+
+            <span class="k">return</span> <span class="n">self</span><span class="p">.</span><span class="nf">get_uncertainty_information_content</span><span class="p">()</span>
+
+        <span class="k">else</span><span class="p">:</span>
+
+            <span class="n">raise</span> <span class="nf">ValueError</span><span class="p">(</span><span class="s2">&quot;`method` must be one of `option` or `uncertainty`&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+
+</details>
+<h5 id="get_option_information_content">get_option_information_content</h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">get_option_information_content</span><span class="p">(</span>
+    <span class="bp">self</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>Get information content of the polymer sequence.</p>
+<p>Ambiguity is interpreted as options.</p>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code>    <span class="n">def</span> <span class="n">get_option_information_content</span><span class="p">(</span><span class="k">self</span><span class="p">):</span>
+
+        <span class="ss">&quot;&quot;&quot;Get information content of the polymer sequence.</span>
+
+<span class="ss">        Ambiguity is interpreted as options.</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+        <span class="n">total_length</span> <span class="o">=</span> <span class="k">self</span><span class="p">.</span><span class="n">sequence</span><span class="p">.</span><span class="n">get_length</span><span class="p">()</span>
+
+        <span class="n">number_of_letters</span> <span class="o">=</span> <span class="n">len</span><span class="p">(</span><span class="k">self</span><span class="p">.</span><span class="n">alphabet</span><span class="p">.</span><span class="n">letters</span><span class="p">)</span>
+
+        <span class="n">p</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">number_of_letters</span>  <span class="o">#</span> <span class="n">probability</span>
+
+        <span class="o">#</span> <span class="n">Shannon</span> <span class="n">information</span> <span class="n">per</span> <span class="n">letter</span><span class="p">:</span> <span class="o">-</span><span class="n">log_2</span> <span class="n">p</span>
+
+        <span class="n">log2_p</span> <span class="o">=</span> <span class="n">math</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">information</span> <span class="o">=</span> <span class="o">-</span><span class="n">log2_p</span> <span class="o">*</span> <span class="n">total_length</span>
+
+        <span class="k">return</span> <span class="n">information</span>
 </code></pre></div>
 
 
@@ -1527,6 +1835,45 @@
         <span class="n">reverse_complement</span> <span class="o">=</span> <span class="n">reversed_polymer</span><span class="p">.</span><span class="n">get_sequence_complement</span><span class="p">()</span>
 
         <span class="k">return</span> <span class="n">reverse_complement</span>
+</code></pre></div>
+
+
+</details>
+<h5 id="get_uncertainty_information_content">get_uncertainty_information_content</h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">get_uncertainty_information_content</span><span class="p">(</span>
+    <span class="bp">self</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>Get information content of the polymer sequence.</p>
+<p>Ambiguity is interpreted as uncertainty: the information content equals to the
+negative base 2 logarithm of the probability of the sequence. The probability
+equals to the number of sequences represented, divided by the number of possible
+sequences with the same length: -log2(represented / possible).</p>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code>    <span class="n">def</span> <span class="n">get_uncertainty_information_content</span><span class="p">(</span><span class="k">self</span><span class="p">):</span>
+
+        <span class="ss">&quot;&quot;&quot;Get information content of the polymer sequence.</span>
+
+<span class="ss">        Ambiguity is interpreted as uncertainty: the information content equals to the</span>
+
+<span class="ss">        negative base 2 logarithm of the probability of the sequence. The probability</span>
+
+<span class="ss">        equals to the number of sequences represented, divided by the number of possible</span>
+
+<span class="ss">        sequences with the same length: -log2(represented / possible).</span>
+
+<span class="ss">        &quot;&quot;&quot;</span>
+
+        <span class="n">total_possible</span> <span class="o">=</span> <span class="n">len</span><span class="p">(</span><span class="k">self</span><span class="p">.</span><span class="n">alphabet</span><span class="p">.</span><span class="n">letters</span><span class="p">)</span> <span class="o">**</span> <span class="k">self</span><span class="p">.</span><span class="n">sequence</span><span class="p">.</span><span class="n">get_length</span><span class="p">()</span>
+
+        <span class="n">p</span> <span class="o">=</span> <span class="k">self</span><span class="p">.</span><span class="n">sequence</span><span class="p">.</span><span class="n">calculate_number_of_combinations</span><span class="p">()</span> <span class="o">/</span> <span class="n">total_possible</span>
+
+        <span class="n">log2_p</span> <span class="o">=</span> <span class="n">math</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">information</span> <span class="o">=</span> <span class="o">-</span><span class="n">log2_p</span>
+
+        <span class="k">return</span> <span class="n">information</span>
 </code></pre></div>
 
 
@@ -1703,6 +2050,20 @@ separators are not implemented yet.</p>
         <span class="n">string</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="n">separators</span><span class="p">[</span><span class="s2">&quot;segment&quot;</span><span class="p">].</span><span class="k">join</span><span class="p">(</span><span class="n">joined_choices</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">string</span>
+
+    <span class="n">def</span> <span class="nf">get_length</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+
+        <span class="s2">&quot;&quot;&quot;Return the length of the sequence.&quot;&quot;&quot;</span>
+
+        <span class="n">total_length</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">for</span> <span class="n">segment</span> <span class="k">in</span> <span class="n">self</span><span class="p">.</span><span class="n">segments</span><span class="p">:</span>
+
+            <span class="c1"># All choices of a segment have the same length, so the first is used:</span>
+
+            <span class="n">total_length</span> <span class="o">+=</span> <span class="nf">len</span><span class="p">(</span><span class="n">segment</span><span class="p">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="n">total_length</span>
 </code></pre></div>
 
 
@@ -1822,6 +2183,31 @@ separators are not implemented yet.</p>
         <span class="p">]</span>
 
         <span class="k">return</span> <span class="n">segments</span>
+</code></pre></div>
+
+
+</details>
+<h5 id="get_length">get_length</h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">get_length</span><span class="p">(</span>
+    <span class="bp">self</span>
+<span class="p">)</span>
+</code></pre></div>
+
+
+<p>Return the length of the sequence.</p>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><code>    <span class="n">def</span> <span class="n">get_length</span><span class="p">(</span><span class="k">self</span><span class="p">):</span>
+
+        <span class="ss">&quot;&quot;&quot;Return the length of the sequence.&quot;&quot;&quot;</span>
+
+        <span class="n">total_length</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">for</span> <span class="n">segment</span> <span class="k">in</span> <span class="k">self</span><span class="p">.</span><span class="n">segments</span><span class="p">:</span>
+
+            <span class="o">#</span> <span class="k">All</span> <span class="n">choices</span> <span class="k">of</span> <span class="n">a</span> <span class="n">segment</span> <span class="n">have</span> <span class="n">the</span> <span class="n">same</span> <span class="k">length</span><span class="p">,</span> <span class="n">so</span> <span class="n">the</span> <span class="k">first</span> <span class="k">is</span> <span class="n">used</span><span class="p">:</span>
+
+            <span class="n">total_length</span> <span class="o">+=</span> <span class="n">len</span><span class="p">(</span><span class="n">segment</span><span class="p">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="n">total_length</span>
 </code></pre></div>
 
 
