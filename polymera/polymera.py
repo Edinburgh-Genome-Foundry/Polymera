@@ -140,14 +140,24 @@ class Polymer:
         # Shannon information per letter: -log_2 p
         log2_p = math.log(p, 2)
         information = -log2_p * total_length
+
         return information
 
     def get_uncertainty_information_content(self):
         """Get information content of the polymer sequence.
 
-        Ambiguity is interpreted as uncertainty.
+        Ambiguity is interpreted as uncertainty: the information content equals to the
+        negative base 2 logarithm of the probability of the sequence. The probability
+        equals to the number of sequences represented, divided by the number of possible
+        sequences with the same length: -log2(represented / possible).
         """
-        pass
+        total_possible = len(self.alphabet.letters) ** self.sequence.get_length()
+        p = self.sequence.calculate_number_of_combinations() / total_possible
+
+        log2_p = math.log(p, 2)
+        information = -log2_p
+
+        return information
 
 
 class Alphabet:
