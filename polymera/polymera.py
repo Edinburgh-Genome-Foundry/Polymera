@@ -1,3 +1,6 @@
+import math
+
+
 class Polymer:
     """Class for representing a sequence with its alphabet.
 
@@ -105,6 +108,46 @@ class Polymer:
         reverse_complement = reversed_polymer.get_sequence_complement()
 
         return reverse_complement
+
+    def get_information_content(self, method):
+        """Get information content of the polymer sequence in bits.
+
+        An ambiguous position can mean one of two things in a sequence:
+        1. Options: all letters noted in the position are suitable.
+        2. Uncertainty: it's not exactly known what letter occupies the position.
+
+
+        **Parameters**
+
+        **method**
+        > Interpretation of ambiguity (`str`): `option` or `uncertainty`.
+        """
+        if method == "option":
+            return self.get_option_information_content()
+        elif method == "uncertainty":
+            return self.get_uncertainty_information_content()
+        else:
+            raise ValueError("`method` must be one of `option` or `uncertainty`")
+
+    def get_option_information_content(self):
+        """Get information content of the polymer sequence.
+
+        Ambiguity is interpreted as options.
+        """
+        total_length = self.sequence.get_length()
+        number_of_letters = len(self.alphabet.letters)
+        p = 1 / number_of_letters  # probability
+        # Shannon information per letter: -log_2 p
+        log2_p = math.log(p, 2)
+        information = -log2_p * total_length
+        return information
+
+    def get_uncertainty_information_content(self):
+        """Get information content of the polymer sequence.
+
+        Ambiguity is interpreted as uncertainty.
+        """
+        pass
 
 
 class Alphabet:
