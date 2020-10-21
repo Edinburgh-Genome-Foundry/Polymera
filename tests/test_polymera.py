@@ -37,3 +37,14 @@ def test_polymer():
         sequence.add_sequence_from_string("ATGAA,ATGC")  # choices must have same length
 
     assert polymer.sequence.to_string() == "ATGAA,ATGCC|TATATTAGAAAAAA|ATGAA,ATGCC"
+
+    sequence = polymera.Sequence()
+    sequence.add_sequence_from_string("T,A")
+    polymer = polymera.Polymer(
+        sequence, alphabet=polymera.Alphabet(letters={"A", "T", "C", "G"})
+    )
+
+    with pytest.raises(ValueError):
+        polymer.get_information_content(method="wrong parameter")
+    assert polymer.get_information_content(method="option") == 2
+    assert polymer.get_information_content(method="uncertainty") == 1
