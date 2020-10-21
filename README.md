@@ -33,11 +33,10 @@ GCGGTC
 GCGGGG
 ```
 
-The choices can span multiple positions with multiletter choices (`GCG|ATC,AGA|TC,GT|AGCA`) and can contain deletions (indels), marked with `-`: `GTAGTG|AT,-T|TAA`. Note that `|AATCCGTCAA|` does not equal to `|AA|TCCGTC|AA|` because the segment boundaries specify the full subsequence that *has* to exist together in the sequence.
+The choices can span multiple positions with multiletter choices (`GCG|ATC,AGA|TC,GT|AGCA`) and can contain deletions (indels), marked with `-` (hyphen): `GTAGTG|AT,-T|TAA`. Note that `|AATCCGTCAA|` does *not* equal to `|AA|TCCGTC|AA|` because the segment boundaries specify the full subsequence that *has* to exist as is, in the sequence.
 
-Finally, the letters can be written with multiple characters, using a separator character between the letters (`.`):
-`A,6mA|T.G.C.T|5mC,C|G.C.5mC`.
-This is useful if we want to represent similarities between some letters in a readable way. In the example above, `A` = adenine, `6mA` = N6-methyladenine, `5mC` = C5-methylcytosine. Another example is writing diphthongs, for example `ae`.
+Finally, the letters can be written with multiple characters, using a separator character between the letters (`.`, period): `A,6mA|T.G.C.T|5mC,C|G.C.5mC`. This is useful if we want to represent similarities between some letters in a readable way. In the example above the multiletters denote methylated variants of the standard letters: `A` = adenine, `6mA` = N6-methyladenine, `C` = cytosine, `5mC` = C5-methylcytosine. Another example is writing diphthongs, for example `ae`.
+
 
 ### Information content
 

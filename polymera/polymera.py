@@ -32,6 +32,7 @@ class Polymer:
     def get_segment_complement(self, segment):
         """Return the complement of a Segment.
 
+
         **Parameters**
 
         **segment**
@@ -71,6 +72,7 @@ class Polymer:
 
     def get_segment_reverse(self, segment):
         """Return the reverse of a Segment.
+
 
         **Parameters**
 
@@ -178,6 +180,7 @@ class Sequence:
     def add_sequence_from_string(self, string):
         """Convert a string into segments and append to the sequence.
 
+
         **Parameters**
 
         **string**
@@ -207,6 +210,15 @@ class Sequence:
         string = self.separators["segment"].join(joined_choices)
 
         return string
+
+    def get_length(self):
+        """Return the length of the sequence."""
+        total_length = 0
+        for segment in self.segments:
+            # All choices of a segment have the same length, so the first is used:
+            total_length += len(segment.choices[0])
+
+        return total_length
 
 
 class Segment:
