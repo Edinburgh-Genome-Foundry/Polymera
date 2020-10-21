@@ -45,7 +45,10 @@ Note that in a sequence, an ambiguous position can mean one of two things:
 1. Options: all letters noted in the position are suitable.
 2. Uncertainty: it's not exactly known what letter occupies the position.
 
-This has implications for the information content of the sequence.
+This has implications for interpreting the Shannon information content of the sequence. For case (1) above (options), the Shannon information of a letter position is -log2(p), where p = 1 / n, with n letters in the alphabet. The information of a 1 letter-long sequence with 2 choices (e.g. `A,T`), from a 4-letter alphabet is 2 bit: -log2(1/4). For calculating information of longer sequences, the information of a position is multiplied by the length of the sequence.
+
+For case (2) (uncertainty), the probability (p) is calculated as the number of sequences represented divided by the number of possible sequences with the same length. Thus the information of `A,T` (which means one of `A` or `T`, but not known which one) is only 1 bit: -log2(2/4).
+Consequently, the information of the uncertain letter `A,T,C,G` (representing `A` or `T` or `C` or `G`) is zero, because -log2(4/4) = 0.
 
 
 ## Install
@@ -73,6 +76,23 @@ polymer = polymera.Polymer(sequence, alphabet=polymera.bio.DNAAlphabet)
 polymer.get_sequence_reverse_complement().to_string()
 ```
 Returns `TTTTTTCTAATATA|GGCAT,TTCAT`.
+
+Polymera can calculate the information of a sequence:
+
+```python
+sequence = polymera.Sequence()
+sequence.add_sequence_from_string("T,A")
+polymer = polymera.Polymer(
+    sequence, alphabet=polymera.Alphabet(letters={"A", "T", "C", "G"})
+)
+polymer.get_information_content(method="option")
+```
+Returns 2.
+
+```python
+polymer.get_information_content(method="uncertainty")
+```
+Returns 1.
 
 
 ## Versioning
