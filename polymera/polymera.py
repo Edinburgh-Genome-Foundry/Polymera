@@ -1,6 +1,10 @@
 import math
 
 
+class WrongLetterError(ValueError):
+    pass
+
+
 class Polymer:
     """Class for representing a sequence with its alphabet.
 
@@ -15,6 +19,13 @@ class Polymer:
     """
 
     def __init__(self, sequence, alphabet):
+        letters_only = set(sequence.to_string()) - set(sequence.separators.values())
+        wrong_letters = letters_only - alphabet.letters
+        if wrong_letters != set():
+            raise WrongLetterError(
+                "These letters are not in the alphabet: %s" % wrong_letters
+            )
+
         self.sequence = sequence
         self.alphabet = alphabet
 

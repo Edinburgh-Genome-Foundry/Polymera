@@ -22,6 +22,11 @@ def test_alphabet():
 
 def test_polymer():
     sequence = polymera.Sequence()
+    sequence.add_sequence_from_string("ATGCX")
+    with pytest.raises(ValueError):
+        polymera.Polymer(sequence, alphabet=polymera.bio.DNAAlphabet)
+
+    sequence = polymera.Sequence()
     sequence.add_sequence_from_string("ATGAA,ATGCC|TATATTAGAAAAAA")
     sequence.add_sequence_from_string("ATGAA,ATGCC")
 
