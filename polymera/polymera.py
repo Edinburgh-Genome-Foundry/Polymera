@@ -1,4 +1,5 @@
 import math
+import random
 
 
 class WrongLetterError(ValueError):
@@ -283,6 +284,28 @@ class Sequence:
             total_length += len(segment.choices[0])
 
         return total_length
+
+    def get_exact_seq(self, randomize=False):
+        """Get an exact sequence and combine the segments.
+
+
+        **Parameters**
+
+        **random**
+        > Choice selection (`bool`). If `True`, use a random choice for each segment,
+        if `False`, use the first choice for each segment.
+        """
+        seq = Sequence()
+        string = ""
+        if randomize:
+            for segment in self.segments:
+                choice = random.choice(segment.choices)
+                string += choice
+        else:
+            for segment in self.segments:
+                string += segment.choices[0]
+        seq.add_sequence_from_string(string)
+        return seq
 
 
 class Segment:

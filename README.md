@@ -10,7 +10,7 @@
 
 **Work in progress!**
 
-Polymera is a Python package for representing *ambiguous sequences.* An ambiguous sequence has a number of possible letters (symbols, elements) at each position. Additionally, Polymera can model sequences written with *complement alphabets.* Each letter of a complement alphabet can form a pair with specific letters, their *complements.*
+Polymera is a Python package for representing *ambiguous sequences.* An ambiguous sequence has a number of possible letters (symbols, elements) at each position. Additionally, Polymera can model sequences written with *complement alphabets.* Each letter of a complement alphabet can form a pair with specific letters, their *complements.* A special type is the *exact sequence,* which has only one letter at each position.
 
 These sequences can describe linear polymers, for example DNA, that can pair with a complement polymer.
 
@@ -66,18 +66,26 @@ Define a sequence:
 sequence = polymera.Sequence()
 sequence.add_sequence_from_string("ATGAA,ATGCC|TATATTAGAAAAAA")
 sequence.calculate_number_of_combinations()
+# 2
 ```
-Returns `2`.
 
 Instantiate polymer:
 
 ```python
 polymer = polymera.Polymer(sequence, alphabet=polymera.bio.DNAAlphabet)
 polymer.get_sequence_reverse_complement().to_string()
+# TTTTTTCTAATATA|GGCAT,TTCAT
 ```
-Returns `TTTTTTCTAATATA|GGCAT,TTCAT`.
 
-Polymera can calculate the information of a sequence:
+Get an exact sequence:
+
+```python
+exact_seq = sequence.get_exact_seq(randomize=True)
+exact_seq.to_string()
+# ATGAATATATTAGAAAAAA
+```
+
+Polymera can calculate the information of a sequence, in bits:
 
 ```python
 sequence = polymera.Sequence()
@@ -86,13 +94,13 @@ polymer = polymera.Polymer(
     sequence, alphabet=polymera.Alphabet(letters={"A", "T", "C", "G"})
 )
 polymer.get_information_content(method="option")
+# 2
 ```
-Returns 2.
 
 ```python
 polymer.get_information_content(method="uncertainty")
+# 1
 ```
-Returns 1.
 
 
 ## Versioning
