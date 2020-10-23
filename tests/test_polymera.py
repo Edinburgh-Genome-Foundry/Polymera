@@ -27,6 +27,13 @@ def test_polymer():
         polymera.Polymer(sequence, alphabet=polymera.bio.DNAAlphabet)
 
     sequence = polymera.Sequence()
+    sequence.add_sequence_from_string("A,T|CC")
+    exact_seq = sequence.get_exact_seq(randomize=False)
+    assert type(exact_seq) == polymera.Sequence
+    assert exact_seq.to_string() == "ACC"
+    assert sequence.get_exact_seq(randomize=True).to_string() in ["ACC", "TCC"]
+
+    sequence = polymera.Sequence()
     sequence.add_sequence_from_string("ATGAA,ATGCC|TATATTAGAAAAAA")
     sequence.add_sequence_from_string("ATGAA,ATGCC")
 
