@@ -23,7 +23,7 @@ The Polymer class consists of the Sequence and the Alphabet classes. The relatio
 
 ### Representation in writing
 
-Representation of these sequences in writing can be in the following way: `AGXCTGXGTGTA55GTAGT66`. The sequence can contain an arbitrary set of letters. For example, in the case of DNA, it can represent xenonucleotides or methylated nucleotides.
+The sequence can contain an arbitrary set of letters. For example, in the case of DNA, xenonucleotides and methylated nucleotides are represented by `X` and numbers: `AGXCTGXGTGTA55GTAGT66`.
 
 Sequence with choice ambiguity: `GCG|A,G|TC,GG`, where a segment separator character, here `|` (vertical bar), denotes the sections of the sequence, and the choices are separated by another character: here we use `,` (comma). The above can mean one of 4 (=1\*2\*2) strings:
 ```
@@ -48,7 +48,7 @@ Note that in a sequence, an ambiguous position can mean one of two things:
 This has implications for interpreting the Shannon information content of the sequence. For case (1) above (options), the Shannon information of a letter position is -log2(p), where p = 1 / n, with n letters in the alphabet. The information of a 1 letter-long sequence with 2 choices (e.g. `A,T`), from a 4-letter alphabet is 2 bit: -log2(1/4). For calculating information of longer sequences, the information of a position is multiplied by the length of the sequence.
 
 For case (2) (uncertainty), the probability (p) is calculated as the number of sequences represented divided by the number of possible sequences with the same length. Thus the information of `A,T` (which means one of `A` or `T`, but not known which one) is only 1 bit: -log2(2/4).
-Consequently, the information of the uncertain letter `A,T,C,G` (representing `A` or `T` or `C` or `G`) is zero, because -log2(4/4) = 0.
+Consequently, the information of the uncertain position `A,T,C,G` (representing `A` or `T` or `C` or `G`) is zero, because -log2(4/4) = 0.
 
 
 ## Install
