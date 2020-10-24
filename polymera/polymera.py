@@ -6,6 +6,10 @@ class WrongLetterError(ValueError):
     pass
 
 
+class DuplicateChoiceError(ValueError):
+    pass
+
+
 class Polymer:
     """Class for representing a sequence with its alphabet.
 
@@ -317,3 +321,5 @@ class Segment:
 
     def __init__(self, choices):
         self.choices = choices
+        if len(set(choices)) != len(choices):
+            raise DuplicateChoiceError("Choices of a segment must be unique.")

@@ -4,6 +4,8 @@ import polymera
 
 def test_segment():
     polymera.Segment(["A", "T"])
+    with pytest.raises(ValueError):
+        polymera.Segment(["A", "A"])  # duplicate choice
 
 
 def test_sequence():
