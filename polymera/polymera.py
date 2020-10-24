@@ -251,10 +251,7 @@ class Sequence:
         **string**
         > `str`.
         """
-        if self.segments is []:
-            self.segments = self.create_segments_from_string(string)
-        else:
-            self.segments += self.create_segments_from_string(string)
+        self.segments += self.create_segments_from_string(string)
 
     def calculate_number_of_combinations(self):
         """Calculate the number of exact sequences represented."""
