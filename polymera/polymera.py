@@ -333,7 +333,7 @@ def hamming(seq1, seq2, comparison="options"):
     if comparison == "options":
         distance = hamming_options(seq1, seq2)
     elif comparison == "uncertainty":
-        distance = hamming_uncertainty(seq1, seq2)
+        distance = 0
     else:
         raise ValueError("Parameter comparison must be 'options' or 'uncertainty'!")
 
@@ -376,4 +376,3 @@ def hamming_options(seq1, seq2):
             distance += 1
 
     return distance
-
