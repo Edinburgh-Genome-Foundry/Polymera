@@ -320,3 +320,60 @@ class Segment:
 
     def __init__(self, choices):
         self.choices = choices
+
+
+class UnequalLengthError(ValueError):
+    pass
+
+
+def hamming(seq1, seq2, comparison="options"):
+    if seq1.get_length() != seq2.get_length():
+        raise UnequalLengthError("The two sequences must be the same length!")
+
+    if comparison == "options":
+        distance = hamming_options(seq1, seq2)
+    elif comparison == "uncertainty":
+        distance = hamming_uncertainty(seq1, seq2)
+    else:
+        raise ValueError("Parameter comparison must be 'options' or 'uncertainty'!")
+
+    return distance
+
+
+def break_segment(segment):
+    """Return a list of n 1-length Segments from a Segment of length n."""
+    new_segments = []
+    for i in range(0, len(segment.choices[0])):
+        new_choices = []
+        for choice in segment.choices:
+            new_choices += choice[i]
+            new_choices = list(set(new_choices))  # remove duplicate letters
+        new_segment = Segment(choices=new_choices)
+        new_segments += [new_segment]
+
+    return new_segments
+
+
+def convert_to_nosegment(seq):
+    """Convert Sequence segments to length 1 segments."""
+    new_segments = []
+    for segment in seq.segments:
+        new_subsegments = break_segment(segment)
+        new_segments += new_subsegments
+
+    sequence = Sequence(segments=new_segments)
+    return sequence
+
+
+def hamming_options(seq1, seq2):
+    sequence1 = convert_to_nosegment(seq1)
+    sequence2 = convert_to_nosegment(seq2)
+
+    distance = 0
+    for i, segment1 in enumerate(sequence1.segments):
+        segment2 = sequence2.segments[i]
+        if set(segment1.choices) & set(segment2.choices) == set():
+            distance += 1
+
+    return distance
+
