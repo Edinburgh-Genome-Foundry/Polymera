@@ -1,5 +1,6 @@
 import pytest
 import polymera
+from polymera.polymera import break_segment, convert_to_nosegment, hamming_options
 
 
 def test_segment():
@@ -62,3 +63,50 @@ def test_polymer():
         polymer.get_information_content(method="wrong parameter")
     assert polymer.get_information_content(method="option") == 2
     assert polymer.get_information_content(method="uncertainty") == 1
+
+
+def test_break_segment():
+    segment = polymera.Segment(["AAT", "AAC"])
+    new_segments = break_segment(segment)
+    assert len(new_segments) == 3
+    assert len(new_segments[2].choices) == 2
+
+
+def test_convert_to_nosegment():
+    seq1 = polymera.Sequence()
+    seq1.add_sequence_from_string("T,C,G|CCC")
+    new_seq = convert_to_nosegment(seq1)
+    assert len(new_seq.segments) == 4
+
+
+def test_hamming_options():
+    seq1 = polymera.Sequence()
+    seq1.add_sequence_from_string("T,C,G|CCC")
+
+    seq2 = polymera.Sequence()
+    seq2.add_sequence_from_string("A|GGG")
+
+    assert hamming_options(seq1, seq2) == 4
+
+
+def test_hamming():
+    seq1 = polymera.Sequence()
+    seq1.add_sequence_from_string("T,C,G|CCG")
+
+    seq2 = polymera.Sequence()
+    seq2.add_sequence_from_string("A|GGG")
+
+    # Options
+    assert polymera.hamming(seq1, seq2, comparison="options") == 3
+
+    # Uncertainty
+    polymera.hamming(seq1, seq2, comparison="uncertainty")
+
+    # Wrong parameter
+    with pytest.raises(ValueError):
+        polymera.hamming(seq1, seq2, comparison="wrong_parameter")
+
+    # Unequal length
+    seq2.add_sequence_from_string("GGG")
+    with pytest.raises(ValueError):
+        polymera.hamming(seq1, seq2, comparison="options")
