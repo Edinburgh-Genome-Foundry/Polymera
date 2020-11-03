@@ -330,13 +330,24 @@ class UnequalLengthError(ValueError):
 
 
 def hamming(seq1, seq2, comparison="options"):
+    """Calculate Hamming distance between two sequences.
+
+
+    **Parameters**
+
+    **seq1, seq2**
+    > Sequences to compare (`Sequence`).
+
+    **comparison**
+    > Interpretation of ambiguity (`str`): `"options"` (default) or `"uncertainty"`.
+    """
     if seq1.get_length() != seq2.get_length():
         raise UnequalLengthError("The two sequences must be the same length!")
 
     if comparison == "options":
         distance = hamming_options(seq1, seq2)
     elif comparison == "uncertainty":
-        distance = 0
+        distance = hamming_uncertainty(seq1, seq2)
     else:
         raise ValueError("Parameter comparison must be 'options' or 'uncertainty'!")
 
@@ -369,6 +380,11 @@ def convert_to_nosegment(seq):
 
 
 def hamming_options(seq1, seq2):
+    """Calculate Hamming distance between two sequences.
+
+    Interpret ambiguity as options.
+    """
+
     sequence1 = convert_to_nosegment(seq1)
     sequence2 = convert_to_nosegment(seq2)
 
@@ -377,5 +393,31 @@ def hamming_options(seq1, seq2):
         segment2 = sequence2.segments[i]
         if set(segment1.choices) & set(segment2.choices) == set():
             distance += 1
+
+    return distance
+
+
+def hamming_uncertainty(seq1, seq2):
+    """Calculate Hamming distance between two sequences.
+
+    Interpret ambiguity as uncertainty.
+    """
+    sequence1 = convert_to_nosegment(seq1)
+    sequence2 = convert_to_nosegment(seq2)
+
+    distance = 0
+    for i, segment1 in enumerate(sequence1.segments):
+        choice_chance_sum = 0
+        segment2 = sequence2.segments[i]
+
+        for choice in segment1.choices:  # single characters as sequences were converted
+
+            if choice in set(segment2.choices):
+                choice_chance = 1 / len(segment2.choices)
+                choice_chance_sum += choice_chance
+
+        chance = choice_chance_sum / len(segment1.choices)
+        pos_distance = 1 - chance
+        distance += pos_distance
 
     return distance
