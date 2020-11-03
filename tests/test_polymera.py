@@ -100,7 +100,10 @@ def test_hamming():
     assert polymera.hamming(seq1, seq2, comparison="options") == 3
 
     # Uncertainty
-    polymera.hamming(seq1, seq2, comparison="uncertainty")
+    assert polymera.hamming(seq1, seq2, comparison="uncertainty") == 3
+    seq1.add_sequence_from_string("T,C,G")
+    seq2.add_sequence_from_string("T,A")
+    assert polymera.hamming(seq1, seq2, comparison="uncertainty") == 3 + (1 - 0.5 / 3)
 
     # Wrong parameter
     with pytest.raises(ValueError):
