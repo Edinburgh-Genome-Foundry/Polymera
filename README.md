@@ -51,6 +51,12 @@ For case (2) (uncertainty), the probability (p) is calculated as the number of s
 Consequently, the information of the uncertain position `A,T,C,G` (representing `A` or `T` or `C` or `G`) is zero, because -log2(4/4) = 0.
 
 
+### Edit distance
+
+The *edit distance* is the minimum number of operations required to transform one string into another. The *Hamming distance* is an edit distance where the only allowed operation is substitution. As with information, we get different values depending on interpretation of ambiguity and the way we measure distance. In the simplest case, we ignore segments and compare position in one sequence with position in the other. In case (1) (options), the Hamming distance between two positions is zero if any of the choices match. In case (2) (uncertainty), the distance is one minus the sum of the chance of a match for each choice, divided by the number of choices.
+The total distance between two sequences is the sum of distances of each position.
+
+
 ## Install
 
 ```bash
@@ -100,6 +106,20 @@ polymer.get_information_content(method="option")
 ```python
 polymer.get_information_content(method="uncertainty")
 # 1
+```
+
+Calculate Hamming distance:
+
+```python
+seq1 = polymera.Sequence()
+seq1.add_sequence_from_string("T,C,G|CCC")
+seq2 = polymera.Sequence()
+seq2.add_sequence_from_string("T|GGG")
+
+polymera.hamming(seq1, seq2, comparison="options")
+# 3
+polymera.hamming(seq1, seq2, comparison="uncertainty")
+# 3.666666666666667
 ```
 
 
